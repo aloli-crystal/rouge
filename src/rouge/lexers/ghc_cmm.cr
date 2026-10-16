@@ -26,8 +26,8 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(return jump call if else goto switch case default foreign export import section)
-        types = %w(bits8 bits16 bits32 bits64 I8 I16 I32 I64 W8 W16 W32 W64 F32 F64 gcptr)
+        keywords = %w[return jump call if else goto switch case default foreign export import section]
+        types = %w[bits8 bits16 bits32 bits64 I8 I16 I32 I64 W8 W16 W32 W64 F32 F64 gcptr]
 
         comment_multi = State.new(:comment_multi)
         comment_multi.add_rule Rule.new(/\*\//, Tokens::CommentMultiline, pop: true)

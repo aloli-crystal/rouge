@@ -26,7 +26,7 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(
+        keywords = %w[
           AddHandler AddressOf Alias And AndAlso As ByRef ByVal Call Case Catch
           Class Const Continue Declare Default Delegate Dim DirectCast Do Each
           Else ElseIf End EndIf Enum Erase Error Event Exit For Friend Function
@@ -39,14 +39,14 @@ module Rouge
           Select Set Shadows Shared Static Step Stop Structure Sub SyncLock Then
           Throw To Try TryCast TypeOf Using Variant Wend When While Widening With
           WithEvents WriteOnly Xor
-        )
+        ]
 
-        type_keywords = %w(
+        type_keywords = %w[
           Boolean Byte Char Date Decimal Double Integer Long Object SByte Short
           Single String UInteger ULong UShort
-        )
+        ]
 
-        constants = %w(True False Nothing)
+        constants = %w[True False Nothing]
 
         kw_pattern = keywords.join("|")
         type_pattern = type_keywords.join("|")

@@ -26,14 +26,14 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(
+        keywords = %w[
           var let const function return if else for while do switch case break
           continue new this class extends import export default from try catch
           finally throw typeof instanceof in of async await yield delete void
           with debugger super static get set
-        )
+        ]
 
-        constants = %w(true false null undefined NaN Infinity)
+        constants = %w[true false null undefined NaN Infinity]
 
         kw_pattern = keywords.join("|")
         const_pattern = constants.join("|")

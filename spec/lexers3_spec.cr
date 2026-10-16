@@ -73,16 +73,16 @@ describe Rouge::Lexers::Java do
 
   it "tokenizes a complete Java snippet" do
     java_code = <<-JAVA
-    import java.util.List;
+      import java.util.List;
 
-    @Override
-    public class Main {
-        public static void main(String[] args) {
-            int x = 42;
-            System.out.println("Hello");
-        }
-    }
-    JAVA
+      @Override
+      public class Main {
+          public static void main(String[] args) {
+              int x = 42;
+              System.out.println("Hello");
+          }
+      }
+      JAVA
 
     lexer = Rouge::Lexers::Java.new
     tokens = lexer.lex(java_code)
@@ -164,14 +164,14 @@ describe Rouge::Lexers::PHP do
 
   it "tokenizes a complete PHP snippet" do
     php_code = <<-PHP
-    <?php
-    function greet($name) {
-        echo "Hello, $name!";
-        return true;
-    }
-    $x = 42;
-    ?>
-    PHP
+      <?php
+      function greet($name) {
+          echo "Hello, $name!";
+          return true;
+      }
+      $x = 42;
+      ?>
+      PHP
 
     lexer = Rouge::Lexers::PHP.new
     tokens = lexer.lex(php_code)
@@ -232,14 +232,14 @@ describe Rouge::Lexers::Dockerfile do
 
   it "tokenizes a complete Dockerfile snippet" do
     dockerfile = <<-DOCKER
-    FROM python:3.9-slim
-    WORKDIR /app
-    COPY requirements.txt .
-    RUN pip install -r requirements.txt
-    ENV PORT=8080
-    EXPOSE 8080
-    CMD ["python", "main.py"]
-    DOCKER
+      FROM python:3.9-slim
+      WORKDIR /app
+      COPY requirements.txt .
+      RUN pip install -r requirements.txt
+      ENV PORT=8080
+      EXPOSE 8080
+      CMD ["python", "main.py"]
+      DOCKER
 
     lexer = Rouge::Lexers::Dockerfile.new
     tokens = lexer.lex(dockerfile)
@@ -303,15 +303,15 @@ describe Rouge::Lexers::Makefile do
 
   it "tokenizes a complete Makefile snippet" do
     makefile = <<-MAKE
-    CC = gcc
-    CFLAGS = -Wall -O2
+      CC = gcc
+      CFLAGS = -Wall -O2
 
-    build: main.o utils.o
-    \t$(CC) $(CFLAGS) -o app $^
+      build: main.o utils.o
+      \t$(CC) $(CFLAGS) -o app $^
 
-    clean:
-    \trm -f *.o app
-    MAKE
+      clean:
+      \trm -f *.o app
+      MAKE
 
     lexer = Rouge::Lexers::Makefile.new
     tokens = lexer.lex(makefile)
@@ -373,17 +373,17 @@ describe Rouge::Lexers::Diff do
 
   it "tokenizes a complete diff snippet" do
     diff_text = <<-DIFF
-    diff --git a/hello.txt b/hello.txt
-    index abc1234..def5678 100644
-    --- a/hello.txt
-    +++ b/hello.txt
-    @@ -1,3 +1,4 @@
-     unchanged line
-    -removed line
-    +added line
-    +another added line
-     context line
-    DIFF
+      diff --git a/hello.txt b/hello.txt
+      index abc1234..def5678 100644
+      --- a/hello.txt
+      +++ b/hello.txt
+      @@ -1,3 +1,4 @@
+       unchanged line
+      -removed line
+      +added line
+      +another added line
+       context line
+      DIFF
 
     lexer = Rouge::Lexers::Diff.new
     tokens = lexer.lex(diff_text)

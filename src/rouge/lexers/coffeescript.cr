@@ -26,8 +26,8 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(and break by catch class continue delete do each else extends finally for if in instanceof is isnt loop new no not of off on or own return super switch then this throw try typeof undefined unless until when while yes)
-        constants = %w(true false null undefined)
+        keywords = %w[and break by catch class continue delete do each else extends finally for if in instanceof is isnt loop new no not of off on or own return super switch then this throw try typeof undefined unless until when while yes]
+        constants = %w[true false null undefined]
 
         comment = State.new(:comment)
         comment.add_rule Rule.new(/[^\n]*/, Tokens::CommentSingle, pop: true)

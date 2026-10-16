@@ -26,7 +26,7 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(ServerRoot Listen LoadModule Include IncludeOptional ServerName ServerAlias DocumentRoot DirectoryIndex Options AllowOverride Require Order Allow Deny ErrorLog CustomLog LogLevel LogFormat SetHandler AddHandler AddType RewriteEngine RewriteRule RewriteCond ProxyPass ProxyPassReverse SSLEngine SSLCertificateFile SSLCertificateKeyFile Redirect Alias ScriptAlias SetEnv Header ExpiresActive ExpiresByType ServerAdmin ErrorDocument AccessFileName TypesConfig HostnameLookups KeepAlive MaxKeepAliveRequests KeepAliveTimeout Timeout User Group)
+        keywords = %w[ServerRoot Listen LoadModule Include IncludeOptional ServerName ServerAlias DocumentRoot DirectoryIndex Options AllowOverride Require Order Allow Deny ErrorLog CustomLog LogLevel LogFormat SetHandler AddHandler AddType RewriteEngine RewriteRule RewriteCond ProxyPass ProxyPassReverse SSLEngine SSLCertificateFile SSLCertificateKeyFile Redirect Alias ScriptAlias SetEnv Header ExpiresActive ExpiresByType ServerAdmin ErrorDocument AccessFileName TypesConfig HostnameLookups KeepAlive MaxKeepAliveRequests KeepAliveTimeout Timeout User Group]
 
         comment = State.new(:comment)
         comment.add_rule Rule.new(/[^\n]*/, Tokens::CommentSingle, pop: true)

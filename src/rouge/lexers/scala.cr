@@ -26,20 +26,20 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(
+        keywords = %w[
           abstract case catch class def do else extends final finally for forSome
           if implicit import lazy macro match new object override package private
           protected return sealed super this throw trait try type val var while
           with yield given using enum export then
-        )
+        ]
 
-        types = %w(
+        types = %w[
           Int Long Short Byte Float Double Boolean Char String Unit Nothing Any
           AnyRef AnyVal Null Option Some None List Map Set Seq Vector Array
           Future Either Left Right Try Success Failure BigInt BigDecimal
-        )
+        ]
 
-        constants = %w(true false null)
+        constants = %w[true false null]
 
         kw_pattern = keywords.join("|")
         type_pattern = types.join("|")

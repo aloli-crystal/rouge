@@ -26,7 +26,7 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(graph digraph subgraph node edge strict)
+        keywords = %w[graph digraph subgraph node edge strict]
         kw_pattern = keywords.join("|")
 
         root = State.new(:root)

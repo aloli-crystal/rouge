@@ -26,8 +26,8 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(Function End if else elseif endif for endfor do while switch case default endswitch break continue return strswitch try catch endtry static override threadsafe Menu Proc Macro Window Picture Constant)
-        types = %w(Variable String Wave NVAR SVAR DFREF WAVE Struct EndStructure)
+        keywords = %w[Function End if else elseif endif for endfor do while switch case default endswitch break continue return strswitch try catch endtry static override threadsafe Menu Proc Macro Window Picture Constant]
+        types = %w[Variable String Wave NVAR SVAR DFREF WAVE Struct EndStructure]
 
         string_double = State.new(:string_double)
         string_double.add_rule Rule.new(/\\./, Tokens::StrEscape)

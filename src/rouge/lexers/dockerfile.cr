@@ -26,10 +26,10 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        instructions = %w(
+        instructions = %w[
           FROM RUN CMD LABEL MAINTAINER EXPOSE ENV ADD COPY ENTRYPOINT
           VOLUME USER WORKDIR ARG ONBUILD STOPSIGNAL HEALTHCHECK SHELL
-        )
+        ]
 
         instr_pattern = instructions.join("|")
 

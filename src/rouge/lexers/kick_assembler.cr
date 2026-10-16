@@ -26,8 +26,8 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        instructions = %w(lda sta ldx stx ldy sty jmp jsr rts rti brk nop pha pla php plp adc sbc and ora eor cmp cpx cpy inc dec inx iny dex dey asl lsr rol ror bcc bcs beq bne bmi bpl bvs bvc clc sec cli sei cld sed clv tax tay txa tya tsx txs)
-        directives = %w(.pc .byte .word .text .fill .const .var .label .macro .function .if .for .while .eval .import .importonce .namespace .filenamespace .segment .disk .file .modify .print .printnow .error .define .struct .enum .return .break)
+        instructions = %w[lda sta ldx stx ldy sty jmp jsr rts rti brk nop pha pla php plp adc sbc and ora eor cmp cpx cpy inc dec inx iny dex dey asl lsr rol ror bcc bcs beq bne bmi bpl bvs bvc clc sec cli sei cld sed clv tax tay txa tya tsx txs]
+        directives = %w[.pc .byte .word .text .fill .const .var .label .macro .function .if .for .while .eval .import .importonce .namespace .filenamespace .segment .disk .file .modify .print .printnow .error .define .struct .enum .return .break]
 
         string_double = State.new(:string_double)
         string_double.add_rule Rule.new(/\\./, Tokens::StrEscape)

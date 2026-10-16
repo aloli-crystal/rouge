@@ -26,9 +26,9 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(abstract as async await break case catch class clone const continue default do echo else enum extends final finally for foreach function if implements include instanceof interface namespace new newtype parent private protected public require return self shape static switch throw trait try type use var while yield)
-        types = %w(int float string bool void num arraykey mixed nonnull nothing noreturn dict vec keyset Awaitable)
-        constants = %w(true false null)
+        keywords = %w[abstract as async await break case catch class clone const continue default do echo else enum extends final finally for foreach function if implements include instanceof interface namespace new newtype parent private protected public require return self shape static switch throw trait try type use var while yield]
+        types = %w[int float string bool void num arraykey mixed nonnull nothing noreturn dict vec keyset Awaitable]
+        constants = %w[true false null]
 
         comment_multi = State.new(:comment_multi)
         comment_multi.add_rule Rule.new(/\*\//, Tokens::CommentMultiline, pop: true)

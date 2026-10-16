@@ -26,7 +26,7 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(title help-string initialisation-code finalisation-code service-call-handler command-keyword-table swi-chunk-base-number swi-handler-code swi-decoding-table irq-handlers vector-handlers event-handler generic-veneers date-string)
+        keywords = %w[title help-string initialisation-code finalisation-code service-call-handler command-keyword-table swi-chunk-base-number swi-handler-code swi-decoding-table irq-handlers vector-handlers event-handler generic-veneers date-string]
 
         root = State.new(:root)
         root.add_rule Rule.new(/\s+/, Tokens::TextWhitespace)

@@ -26,8 +26,8 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(if else elseif endif foreach endforeach while endwhile function endfunction macro endmacro return set unset option project add_executable add_library target_link_libraries find_package include message install list string file cmake_minimum_required add_subdirectory target_include_directories target_compile_definitions target_compile_options enable_testing add_test configure_file)
-        constants = %w(TRUE FALSE ON OFF YES NO)
+        keywords = %w[if else elseif endif foreach endforeach while endwhile function endfunction macro endmacro return set unset option project add_executable add_library target_link_libraries find_package include message install list string file cmake_minimum_required add_subdirectory target_include_directories target_compile_definitions target_compile_options enable_testing add_test configure_file]
+        constants = %w[TRUE FALSE ON OFF YES NO]
 
         comment = State.new(:comment)
         comment.add_rule Rule.new(/[^\n]*/, Tokens::CommentSingle, pop: true)

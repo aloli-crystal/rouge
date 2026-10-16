@@ -26,13 +26,13 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(
+        keywords = %w[
           class define node inherits if elsif else unless case include require
           contain realize notify subscribe before after file package service
           exec user group cron mount host tidy augeas yumrepo apt template
           ensure present absent running stopped installed latest purged
           directory link
-        )
+        ]
 
         kw_pattern = keywords.join("|")
 

@@ -26,13 +26,13 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(
+        keywords = %w[
           class inherits object mixin program test package import method override
           var const self super return if else throw try catch then always new not
           and or constructor
-        )
+        ]
 
-        constants = %w(null true false)
+        constants = %w[null true false]
 
         kw_pattern = keywords.join("|")
         const_pattern = constants.join("|")

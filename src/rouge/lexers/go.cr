@@ -26,24 +26,24 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(
+        keywords = %w[
           break case chan const continue default defer else fallthrough for
           func go goto if import interface map package range return select
           struct switch type var
-        )
+        ]
 
-        types = %w(
+        types = %w[
           bool byte complex64 complex128 error float32 float64
           int int8 int16 int32 int64 rune string
           uint uint8 uint16 uint32 uint64 uintptr
-        )
+        ]
 
-        constants = %w(true false nil iota)
+        constants = %w[true false nil iota]
 
-        builtins = %w(
+        builtins = %w[
           append cap close complex copy delete imag len make new panic
           print println real recover
-        )
+        ]
 
         kw_pattern = keywords.join("|")
         type_pattern = types.join("|")

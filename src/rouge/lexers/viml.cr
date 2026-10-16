@@ -26,13 +26,13 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(
+        keywords = %w[
           if else elseif endif while endwhile for endfor in do try catch endtry
           finally throw function endfunction return call let set unlet execute
           echo echom echoerr normal source runtime autocmd augroup command map
           nmap vmap imap nnoremap vnoremap inoremap silent abort finish redraw
           syntax highlight hi match region keyword
-        )
+        ]
 
         kw_pattern = keywords.join("|")
 

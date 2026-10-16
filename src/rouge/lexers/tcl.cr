@@ -26,7 +26,7 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(
+        keywords = %w[
           after append apply array binary break catch cd chan clock close concat
           continue coroutine dict encoding eof error eval exec exit expr fblocked
           fconfigure fcopy file fileevent filename flush for foreach format gets
@@ -36,7 +36,7 @@ module Rouge
           rename return scan seek set socket source split string subst switch
           tailcall tell throw time trace try unload unset update uplevel upvar
           variable vwait while
-        )
+        ]
 
         kw_pattern = keywords.join("|")
 

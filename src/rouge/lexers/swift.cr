@@ -26,7 +26,7 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(
+        keywords = %w[
           associatedtype break case catch class continue convenience default defer
           deinit do else enum extension fallthrough fileprivate final for func guard
           if import in indirect infix init inout internal is lazy let mutating
@@ -34,16 +34,16 @@ module Rouge
           public repeat required rethrows return self some static struct subscript
           super switch throw throws try typealias unowned var weak where while
           async await actor
-        )
+        ]
 
-        types = %w(
+        types = %w[
           Int Int8 Int16 Int32 Int64 UInt UInt8 UInt16 UInt32 UInt64
           Float Double Bool String Character Array Dictionary Set Optional
           Result Error Any AnyObject Void Never Codable Equatable Hashable
           Comparable CustomStringConvertible
-        )
+        ]
 
-        constants = %w(true false nil)
+        constants = %w[true false nil]
 
         kw_pattern = keywords.join("|")
         type_pattern = types.join("|")

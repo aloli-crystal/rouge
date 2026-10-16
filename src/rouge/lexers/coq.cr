@@ -26,8 +26,8 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(Axiom CoFixpoint CoInductive Definition Example Fixpoint Function Hypothesis Inductive Lemma Ltac Parameter Proof Qed Record Section Structure Theorem Type Variable as at cofix else end exists fix for forall fun if in let match return then with Require Import Export Open Scope Notation Set Unset Compute Eval Check Print Admitted)
-        constants = %w(True False)
+        keywords = %w[Axiom CoFixpoint CoInductive Definition Example Fixpoint Function Hypothesis Inductive Lemma Ltac Parameter Proof Qed Record Section Structure Theorem Type Variable as at cofix else end exists fix for forall fun if in let match return then with Require Import Export Open Scope Notation Set Unset Compute Eval Check Print Admitted]
+        constants = %w[True False]
 
         comment_multi = State.new(:comment_multi)
         comment_multi.add_rule Rule.new(/\(\*/, Tokens::CommentMultiline, next_state: :comment_multi)

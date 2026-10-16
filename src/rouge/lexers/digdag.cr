@@ -26,8 +26,8 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        operators = %w(sh> py> rb> td> emr> mail> http> s3_wait> redshift> pg> embulk> loop> for_each> if> fail> echo> td_ddl> td_load> td_table_export>)
-        specials = %w(_export _retry _parallel _check _error _do)
+        operators = %w[sh> py> rb> td> emr> mail> http> s3_wait> redshift> pg> embulk> loop> for_each> if> fail> echo> td_ddl> td_load> td_table_export>]
+        specials = %w[_export _retry _parallel _check _error _do]
 
         root = State.new(:root)
         root.add_rule Rule.new(/\s+/, Tokens::TextWhitespace)

@@ -26,8 +26,8 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(defn defmacro defclass do if cond when unless for while let setv import require try except raise return yield with as and or not in is lambda fn global nonlocal assert del pass break continue else elif finally)
-        constants = %w(True False None)
+        keywords = %w[defn defmacro defclass do if cond when unless for while let setv import require try except raise return yield with as and or not in is lambda fn global nonlocal assert del pass break continue else elif finally]
+        constants = %w[True False None]
 
         string_double = State.new(:string_double)
         string_double.add_rule Rule.new(/\\./, Tokens::StrEscape)

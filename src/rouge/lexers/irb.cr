@@ -26,8 +26,8 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        ruby_keywords = %w(def end class module if else elsif unless while until for do begin rescue ensure raise return yield break next in when case then require include extend attr_reader attr_writer attr_accessor private protected public puts print)
-        constants = %w(true false nil self)
+        ruby_keywords = %w[def end class module if else elsif unless while until for do begin rescue ensure raise return yield break next in when case then require include extend attr_reader attr_writer attr_accessor private protected public puts print]
+        constants = %w[true false nil self]
 
         string_double = State.new(:string_double)
         string_double.add_rule Rule.new(/\\./, Tokens::StrEscape)

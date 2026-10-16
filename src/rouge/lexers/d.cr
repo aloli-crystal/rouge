@@ -26,9 +26,9 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(abstract alias align asm assert auto body break case cast catch class const continue debug default delegate delete deprecated do else enum export extern final finally for foreach foreach_reverse function goto if immutable import in inout interface invariant is lazy mixin module new nothrow out override package pragma private protected public pure ref return scope shared static struct super switch synchronized template this throw try typedef typeid typeof union unittest version void while with __FILE__ __LINE__ __MODULE__ __FUNCTION__ __PRETTY_FUNCTION__)
-        types = %w(bool byte char dchar double float idouble ifloat int ireal long real short ubyte ucent uint ulong ushort wchar string size_t ptrdiff_t)
-        constants = %w(true false null)
+        keywords = %w[abstract alias align asm assert auto body break case cast catch class const continue debug default delegate delete deprecated do else enum export extern final finally for foreach foreach_reverse function goto if immutable import in inout interface invariant is lazy mixin module new nothrow out override package pragma private protected public pure ref return scope shared static struct super switch synchronized template this throw try typedef typeid typeof union unittest version void while with __FILE__ __LINE__ __MODULE__ __FUNCTION__ __PRETTY_FUNCTION__]
+        types = %w[bool byte char dchar double float idouble ifloat int ireal long real short ubyte ucent uint ulong ushort wchar string size_t ptrdiff_t]
+        constants = %w[true false null]
 
         comment = State.new(:comment)
         comment.add_rule Rule.new(/[^\n]*/, Tokens::CommentSingle, pop: true)

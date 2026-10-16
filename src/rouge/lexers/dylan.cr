@@ -26,7 +26,7 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(above abstract afterwards begin below block by case class cleanup constant create define domain else elseif end exception export finally for from generic handler if in inherited instance let library local method module open otherwise rename required seal select signal slot subclass then to unless until use variable virtual when while)
+        keywords = %w[above abstract afterwards begin below block by case class cleanup constant create define domain else elseif end exception export finally for from generic handler if in inherited instance let library local method module open otherwise rename required seal select signal slot subclass then to unless until use variable virtual when while]
 
         string_double = State.new(:string_double)
         string_double.add_rule Rule.new(/\\./, Tokens::StrEscape)

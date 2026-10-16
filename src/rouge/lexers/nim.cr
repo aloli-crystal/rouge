@@ -26,9 +26,9 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(addr and as asm bind block break case cast concept const continue converter defer discard distinct div do elif else end enum except export finally for from func if import in include interface is isnot iterator let macro method mixin mod not notin object of or out proc ptr raise ref return shl shr static template try tuple type using var when while xor yield)
-        constants = %w(true false nil)
-        types = %w(int int8 int16 int32 int64 uint uint8 uint16 uint32 uint64 float float32 float64 bool char string cstring pointer range array seq set tuple void auto any)
+        keywords = %w[addr and as asm bind block break case cast concept const continue converter defer discard distinct div do elif else end enum except export finally for from func if import in include interface is isnot iterator let macro method mixin mod not notin object of or out proc ptr raise ref return shl shr static template try tuple type using var when while xor yield]
+        constants = %w[true false nil]
+        types = %w[int int8 int16 int32 int64 uint uint8 uint16 uint32 uint64 float float32 float64 bool char string cstring pointer range array seq set tuple void auto any]
 
         comment = State.new(:comment)
         comment.add_rule Rule.new(/[^\n]*/, Tokens::CommentSingle, pop: true)

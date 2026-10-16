@@ -26,7 +26,7 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(version totalColumns noHeader permitEmpty is not in starts ends regex range length unique checksum fileExists integrityCheck if or and)
+        keywords = %w[version totalColumns noHeader permitEmpty is not in starts ends regex range length unique checksum fileExists integrityCheck if or and]
 
         root = State.new(:root)
         root.add_rule Rule.new(/\s+/, Tokens::TextWhitespace)

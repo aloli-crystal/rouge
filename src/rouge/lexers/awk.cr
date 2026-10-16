@@ -26,8 +26,8 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(BEGIN END if else while for do break continue delete exit function getline next print printf return split sprintf sub gsub match length substr index tolower toupper system in)
-        builtins = %w(NR NF FS RS OFS ORS FILENAME ARGC ARGV ENVIRON FNR OFMT RSTART RLENGTH SUBSEP)
+        keywords = %w[BEGIN END if else while for do break continue delete exit function getline next print printf return split sprintf sub gsub match length substr index tolower toupper system in]
+        builtins = %w[NR NF FS RS OFS ORS FILENAME ARGC ARGV ENVIRON FNR OFMT RSTART RLENGTH SUBSEP]
 
         comment = State.new(:comment)
         comment.add_rule Rule.new(/[^\n]*/, Tokens::CommentSingle, pop: true)

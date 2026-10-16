@@ -26,18 +26,18 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(
+        keywords = %w[
           if fi else elif while do done for then return function select
           continue until esac case in
-        )
+        ]
 
-        builtins = %w(
+        builtins = %w[
           echo cd pwd ls cat grep sed awk export source alias unalias set unset
           exit read eval exec test true false shift getopts local declare readonly
           trap wait kill bg fg jobs history type which command builtin printf
           mkdir rm cp mv chmod chown touch find sort uniq wc head tail tee xargs
           curl wget tar gzip gunzip sudo apt yum brew pip npm git docker
-        )
+        ]
 
         kw_pattern = keywords.join("|")
         bi_pattern = builtins.join("|")

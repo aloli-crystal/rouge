@@ -26,13 +26,13 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(
+        keywords = %w[
           define lambda let let\\* letrec if cond else case and or not begin do
           set! quote quasiquote unquote unquote-splicing define-syntax
           syntax-rules define-macro when unless delay force
           call-with-current-continuation call/cc values call-with-values
           dynamic-wind import export library
-        )
+        ]
 
         kw_pattern = keywords.join("|")
 

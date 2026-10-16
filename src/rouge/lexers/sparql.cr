@@ -26,12 +26,12 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(
+        keywords = %w[
           SELECT WHERE FILTER OPTIONAL UNION ORDER BY ASC DESC LIMIT OFFSET
           PREFIX BASE CONSTRUCT DESCRIBE ASK INSERT DELETE GRAPH FROM NAMED
           DISTINCT REDUCED GROUP HAVING BIND VALUES EXISTS NOT AS SERVICE
           MINUS IN SILENT
-        )
+        ]
 
         kw_pattern = keywords.join("|")
 

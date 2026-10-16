@@ -26,9 +26,9 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(attribute const uniform varying break continue do for while if else in out inout discard return struct switch case default subroutine flat smooth layout centroid sample patch precision)
-        types = %w(void float int bool vec2 vec3 vec4 mat2 mat3 mat4 ivec2 ivec3 ivec4 bvec2 bvec3 bvec4 uvec2 uvec3 uvec4 dvec2 dvec3 dvec4 dmat2 dmat3 dmat4 sampler1D sampler2D sampler3D samplerCube sampler2DArray sampler1DShadow sampler2DShadow samplerCubeShadow sampler2DMS image1D image2D image3D uint double lowp mediump highp)
-        constants = %w(true false)
+        keywords = %w[attribute const uniform varying break continue do for while if else in out inout discard return struct switch case default subroutine flat smooth layout centroid sample patch precision]
+        types = %w[void float int bool vec2 vec3 vec4 mat2 mat3 mat4 ivec2 ivec3 ivec4 bvec2 bvec3 bvec4 uvec2 uvec3 uvec4 dvec2 dvec3 dvec4 dmat2 dmat3 dmat4 sampler1D sampler2D sampler3D samplerCube sampler2DArray sampler1DShadow sampler2DShadow samplerCubeShadow sampler2DMS image1D image2D image3D uint double lowp mediump highp]
+        constants = %w[true false]
 
         comment = State.new(:comment)
         comment.add_rule Rule.new(/[^\n]*/, Tokens::CommentSingle, pop: true)

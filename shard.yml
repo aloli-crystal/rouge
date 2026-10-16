@@ -1,5 +1,5 @@
 name: rouge
-version: 4.7.0.3
+version: 4.7.0.4
 
 description: |
   Pure Crystal syntax highlighter, port of the Rouge Ruby gem.
@@ -16,4 +16,4 @@ crystal: ">= 1.19.0"
 development_dependencies:
   ameba:
     github: crystal-ameba/ameba
-    version: "~> 1.6"
+    version: "~> 1.7"

@@ -3,6 +3,10 @@
 :toc-title: Versions
 :toclevels: 2
 
+== v4.7.0.4 — 2026-10-16
+
+* ameba 1.7 et Crystal 1.22.0 en CI ; nouvelles règles appliquées, aucun changement de comportement.
+
 == v4.7.0.3 — 2026-07-28
 
 * Renommage du shard `crystal-rouge` → `rouge` (abandon du préfixe `crystal-` ; l'org `aloli-crystal` porte déjà le contexte « Crystal »). Le module `Rouge` et l'API publique sont inchangés.

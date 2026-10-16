@@ -26,7 +26,7 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(theory imports begin end lemma theorem proof qed by auto simp blast metis sledgehammer sorry have show assume obtain where fix let in then hence thus moreover ultimately from using apply done oops next definition fun function datatype primrec value abbreviation type_synonym locale interpretation sublocale class instantiation instance)
+        keywords = %w[theory imports begin end lemma theorem proof qed by auto simp blast metis sledgehammer sorry have show assume obtain where fix let in then hence thus moreover ultimately from using apply done oops next definition fun function datatype primrec value abbreviation type_synonym locale interpretation sublocale class instantiation instance]
 
         comment_multi = State.new(:comment_multi)
         comment_multi.add_rule Rule.new(/\*\)/, Tokens::CommentMultiline, pop: true)

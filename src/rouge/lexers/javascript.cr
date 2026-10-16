@@ -26,9 +26,9 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(var let const function return if else for while do switch case break continue new this class extends import export default from try catch finally throw typeof instanceof in of async await yield delete void with debugger super static get set)
-        constants = %w(true false null undefined NaN Infinity)
-        builtins = %w(console document window Array Object String Number Boolean Date Math JSON Promise Map Set Symbol RegExp Error parseInt parseFloat isNaN isFinite encodeURI decodeURI encodeURIComponent decodeURIComponent)
+        keywords = %w[var let const function return if else for while do switch case break continue new this class extends import export default from try catch finally throw typeof instanceof in of async await yield delete void with debugger super static get set]
+        constants = %w[true false null undefined NaN Infinity]
+        builtins = %w[console document window Array Object String Number Boolean Date Math JSON Promise Map Set Symbol RegExp Error parseInt parseFloat isNaN isFinite encodeURI decodeURI encodeURIComponent decodeURIComponent]
 
         # :comment_single
         comment_single = State.new(:comment_single)

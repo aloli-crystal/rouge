@@ -26,8 +26,8 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(def var fn do quote if splice while break set quasiquote unquote upscope let cond case match try catch loop for each repeat forever when unless coro defn defmacro import use require)
-        constants = %w(nil true false)
+        keywords = %w[def var fn do quote if splice while break set quasiquote unquote upscope let cond case match try catch loop for each repeat forever when unless coro defn defmacro import use require]
+        constants = %w[nil true false]
 
         string_double = State.new(:string_double)
         string_double.add_rule Rule.new(/\\./, Tokens::StrEscape)

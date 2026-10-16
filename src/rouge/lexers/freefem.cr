@@ -26,8 +26,8 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(border buildmesh cout endl exec for func if include load mesh plot problem solve varf while else return break continue)
-        types = %w(real int string bool complex fespace macro)
+        keywords = %w[border buildmesh cout endl exec for func if include load mesh plot problem solve varf while else return break continue]
+        types = %w[real int string bool complex fespace macro]
 
         string_double = State.new(:string_double)
         string_double.add_rule Rule.new(/\\./, Tokens::StrEscape)

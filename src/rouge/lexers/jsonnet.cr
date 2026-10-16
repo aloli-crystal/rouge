@@ -26,8 +26,8 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(assert else error for function if import importstr in local then tailstrict)
-        constants = %w(true false null self super)
+        keywords = %w[assert else error for function if import importstr in local then tailstrict]
+        constants = %w[true false null self super]
 
         comment = State.new(:comment)
         comment.add_rule Rule.new(/[^\n]*/, Tokens::CommentSingle, pop: true)

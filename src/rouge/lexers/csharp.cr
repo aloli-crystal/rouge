@@ -26,9 +26,9 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(abstract as base break case catch checked class const continue default delegate do else enum event explicit extern finally fixed for foreach goto if implicit in interface internal is lock namespace new operator out override params partial private protected public readonly ref return sealed sizeof stackalloc static struct switch this throw try typeof unchecked unsafe using var virtual volatile while yield async await dynamic nameof record init required global where when with)
-        types = %w(bool byte char decimal double float int long object sbyte short string uint ulong ushort void)
-        constants = %w(true false null)
+        keywords = %w[abstract as base break case catch checked class const continue default delegate do else enum event explicit extern finally fixed for foreach goto if implicit in interface internal is lock namespace new operator out override params partial private protected public readonly ref return sealed sizeof stackalloc static struct switch this throw try typeof unchecked unsafe using var virtual volatile while yield async await dynamic nameof record init required global where when with]
+        types = %w[bool byte char decimal double float int long object sbyte short string uint ulong ushort void]
+        constants = %w[true false null]
 
         comment = State.new(:comment)
         comment.add_rule Rule.new(/[^\n]*/, Tokens::CommentSingle, pop: true)

@@ -26,8 +26,8 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(assert builtins else if import in inherit let or rec then with)
-        constants = %w(true false null)
+        keywords = %w[assert builtins else if import in inherit let or rec then with]
+        constants = %w[true false null]
 
         comment = State.new(:comment)
         comment.add_rule Rule.new(/[^\n]*/, Tokens::CommentSingle, pop: true)

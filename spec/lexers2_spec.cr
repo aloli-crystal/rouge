@@ -68,17 +68,17 @@ describe Rouge::Lexers::Go do
 
   it "tokenizes a complete Go snippet" do
     go_code = <<-GO
-    package main
+      package main
 
-    import "fmt"
+      import "fmt"
 
-    func main() {
-        x := 42
-        if x > 0 {
-            fmt.Println("positive")
-        }
-    }
-    GO
+      func main() {
+          x := 42
+          if x > 0 {
+              fmt.Println("positive")
+          }
+      }
+      GO
 
     lexer = Rouge::Lexers::Go.new
     tokens = lexer.lex(go_code)
@@ -169,16 +169,16 @@ describe Rouge::Lexers::Ruby do
 
   it "tokenizes a complete Ruby snippet" do
     ruby_code = <<-RUBY
-    class Greeter
-      def initialize(name)
-        @name = name
-      end
+      class Greeter
+        def initialize(name)
+          @name = name
+        end
 
-      def greet
-        puts "Hello, \#{@name}!"
+        def greet
+          puts "Hello, \#{@name}!"
+        end
       end
-    end
-    RUBY
+      RUBY
 
     lexer = Rouge::Lexers::Ruby.new
     tokens = lexer.lex(ruby_code)
@@ -260,16 +260,16 @@ describe Rouge::Lexers::YAML do
 
   it "tokenizes a complete YAML snippet" do
     yaml_code = <<-YAML
-    ---
-    name: Crystal Rouge
-    version: 0.1.0
-    authors:
-      - John Doe
-    dependencies:
-      crystal: ">=1.0"
-    enabled: true
-    count: 42
-    YAML
+      ---
+      name: Crystal Rouge
+      version: 0.1.0
+      authors:
+        - John Doe
+      dependencies:
+        crystal: ">=1.0"
+      enabled: true
+      count: 42
+      YAML
 
     lexer = Rouge::Lexers::YAML.new
     tokens = lexer.lex(yaml_code)
@@ -348,16 +348,16 @@ describe Rouge::Lexers::C do
 
   it "tokenizes a complete C snippet" do
     c_code = <<-CCODE
-    #include <stdio.h>
+      #include <stdio.h>
 
-    int main() {
-        int x = 42;
-        if (x > 0) {
-            printf("positive: %d\\n", x);
-        }
-        return 0;
-    }
-    CCODE
+      int main() {
+          int x = 42;
+          if (x > 0) {
+              printf("positive: %d\\n", x);
+          }
+          return 0;
+      }
+      CCODE
 
     lexer = Rouge::Lexers::C.new
     tokens = lexer.lex(c_code)
@@ -437,16 +437,16 @@ describe Rouge::Lexers::TypeScript do
 
   it "tokenizes a complete TypeScript snippet" do
     ts_code = <<-TS
-    interface User {
-      name: string;
-      age: number;
-    }
+      interface User {
+        name: string;
+        age: number;
+      }
 
-    function greet(user: User): string {
-      const msg: string = `Hello, ${user.name}!`;
-      return msg;
-    }
-    TS
+      function greet(user: User): string {
+        const msg: string = `Hello, ${user.name}!`;
+        return msg;
+      }
+      TS
 
     lexer = Rouge::Lexers::TypeScript.new
     tokens = lexer.lex(ts_code)
@@ -548,20 +548,20 @@ describe Rouge::Lexers::Rust do
 
   it "tokenizes a complete Rust snippet" do
     rust_code = <<-RUST
-    use std::collections::HashMap;
+      use std::collections::HashMap;
 
-    /// A simple struct
-    #[derive(Debug)]
-    struct Point {
-        x: f64,
-        y: f64,
-    }
+      /// A simple struct
+      #[derive(Debug)]
+      struct Point {
+          x: f64,
+          y: f64,
+      }
 
-    fn main() {
-        let p = Point { x: 1.0, y: 2.0 };
-        println!("Point: {:?}", p);
-    }
-    RUST
+      fn main() {
+          let p = Point { x: 1.0, y: 2.0 };
+          println!("Point: {:?}", p);
+      }
+      RUST
 
     lexer = Rouge::Lexers::Rust.new
     tokens = lexer.lex(rust_code)

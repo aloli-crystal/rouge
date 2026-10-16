@@ -26,23 +26,23 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(
+        keywords = %w[
           abstract assert break case catch class const continue default do else
           enum extends final finally for goto if implements import instanceof
           interface native new package private protected public return static
           strictfp super switch synchronized this throw throws transient try
           volatile while yield var record sealed permits non-sealed
-        )
+        ]
 
-        types = %w(
+        types = %w[
           boolean byte char double float int long short void
           String Integer Double Float Boolean Long Short Byte Character
           Object Class System Math Arrays Collections List Map Set
           HashMap ArrayList Optional Stream Exception RuntimeException
           Thread Runnable
-        )
+        ]
 
-        constants = %w(true false null)
+        constants = %w[true false null]
 
         kw_pattern = keywords.join("|")
         type_pattern = types.join("|")

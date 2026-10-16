@@ -26,9 +26,9 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(program end subroutine function module use implicit none integer real double precision character logical complex dimension allocatable intent in out inout do enddo if then else endif select case endselect where forall return call write read print format open close stop contains type class interface procedure abstract extends public private protected allocate deallocate cycle exit data common equivalence block endblock associate endassociate critical endcritical)
-        constants = %w(true false)
-        types = %w(integer real double precision character logical complex)
+        keywords = %w[program end subroutine function module use implicit none integer real double precision character logical complex dimension allocatable intent in out inout do enddo if then else endif select case endselect where forall return call write read print format open close stop contains type class interface procedure abstract extends public private protected allocate deallocate cycle exit data common equivalence block endblock associate endassociate critical endcritical]
+        constants = %w[true false]
+        types = %w[integer real double precision character logical complex]
 
         comment = State.new(:comment)
         comment.add_rule Rule.new(/[^\n]*/, Tokens::CommentSingle, pop: true)

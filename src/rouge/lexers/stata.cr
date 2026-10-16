@@ -26,7 +26,7 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(
+        keywords = %w[
           if else in forvalues foreach while local global program end capture
           quietly noisily display generate replace drop keep sort merge append
           collapse reshape encode decode label tabulate summarize describe list
@@ -34,7 +34,7 @@ module Rouge
           line bar histogram kdensity matrix predict test estimates margins
           bootstrap simulate use save clear set sysuse webuse import export
           insheet outsheet log using by bysort return
-        )
+        ]
 
         kw_pattern = keywords.join("|")
 

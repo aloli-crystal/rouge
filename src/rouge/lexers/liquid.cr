@@ -26,8 +26,8 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(if elsif else endif unless endunless for endfor case when endcase tablerow endtablerow assign capture endcapture increment decrement include render raw endraw comment endcomment cycle break continue in)
-        constants = %w(true false nil null blank empty)
+        keywords = %w[if elsif else endif unless endunless for endfor case when endcase tablerow endtablerow assign capture endcapture increment decrement include render raw endraw comment endcomment cycle break continue in]
+        constants = %w[true false nil null blank empty]
 
         tag = State.new(:tag)
         tag.add_rule Rule.new(/\s+/, Tokens::TextWhitespace)

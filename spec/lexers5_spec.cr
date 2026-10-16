@@ -56,20 +56,20 @@ describe Rouge::Lexers::Swift do
 
   it "tokenizes a complete Swift snippet" do
     swift_code = <<-SWIFT
-    import Foundation
+      import Foundation
 
-    struct Person {
-        let name: String
-        var age: Int
+      struct Person {
+          let name: String
+          var age: Int
 
-        func greet() -> String {
-            return "Hello, \\(name)!"
-        }
-    }
+          func greet() -> String {
+              return "Hello, \\(name)!"
+          }
+      }
 
-    let p = Person(name: "Alice", age: 30)
-    print(p.greet())
-    SWIFT
+      let p = Person(name: "Alice", age: 30)
+      print(p.greet())
+      SWIFT
 
     lexer = Rouge::Lexers::Swift.new
     tokens = lexer.lex(swift_code)
@@ -143,15 +143,15 @@ describe Rouge::Lexers::Elixir do
 
   it "tokenizes a complete Elixir snippet" do
     ex_code = <<-EX
-    defmodule Math do
-      def factorial(0), do: 1
-      def factorial(n) when n > 0 do
-        n * factorial(n - 1)
+      defmodule Math do
+        def factorial(0), do: 1
+        def factorial(n) when n > 0 do
+          n * factorial(n - 1)
+        end
       end
-    end
 
-    IO.puts(Math.factorial(10))
-    EX
+      IO.puts(Math.factorial(10))
+      EX
 
     lexer = Rouge::Lexers::Elixir.new
     tokens = lexer.lex(ex_code)
@@ -230,19 +230,19 @@ describe Rouge::Lexers::Scala do
 
   it "tokenizes a complete Scala snippet" do
     scala_code = <<-SCALA
-    package com.example
+      package com.example
 
-    import scala.collection.mutable
+      import scala.collection.mutable
 
-    @deprecated
-    object Main {
-      def main(args: Array[String]): Unit = {
-        val x: Int = 42
-        val msg = s"Hello, ${args(0)}!"
-        println(msg)
+      @deprecated
+      object Main {
+        def main(args: Array[String]): Unit = {
+          val x: Int = 42
+          val msg = s"Hello, ${args(0)}!"
+          println(msg)
+        }
       }
-    }
-    SCALA
+      SCALA
 
     lexer = Rouge::Lexers::Scala.new
     tokens = lexer.lex(scala_code)
@@ -321,15 +321,15 @@ describe Rouge::Lexers::R do
 
   it "tokenizes a complete R snippet" do
     r_code = <<-RCODE
-    # Calculate mean
-    x <- c(1, 2, 3, 4, 5)
-    result <- mean(x)
-    print(result)
+      # Calculate mean
+      x <- c(1, 2, 3, 4, 5)
+      result <- mean(x)
+      print(result)
 
-    if (result > 2) {
-      cat("Above threshold")
-    }
-    RCODE
+      if (result > 2) {
+        cat("Above threshold")
+      }
+      RCODE
 
     lexer = Rouge::Lexers::R.new
     tokens = lexer.lex(r_code)
@@ -410,20 +410,20 @@ describe Rouge::Lexers::Perl do
 
   it "tokenizes a complete Perl snippet" do
     perl_code = <<-PERL
-    use strict;
-    use warnings;
+      use strict;
+      use warnings;
 
-    my $name = "World";
-    my @nums = (1, 2, 3);
-    my %hash = (key => "value");
+      my $name = "World";
+      my @nums = (1, 2, 3);
+      my %hash = (key => "value");
 
-    sub greet {
-        my ($who) = @_;
-        print "Hello, $who!\\n";
-    }
+      sub greet {
+          my ($who) = @_;
+          print "Hello, $who!\\n";
+      }
 
-    greet($name);
-    PERL
+      greet($name);
+      PERL
 
     lexer = Rouge::Lexers::Perl.new
     tokens = lexer.lex(perl_code)

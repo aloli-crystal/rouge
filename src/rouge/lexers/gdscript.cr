@@ -26,9 +26,9 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(if elif else for while match break continue pass return class class_name extends is as self signal func static const enum var onready export setget tool yield preload load assert breakpoint in not and or await super)
-        constants = %w(true false null)
-        types = %w(void bool int float String Vector2 Vector3 Color Rect2 Transform2D Transform3D Basis Quat AABB Plane NodePath RID Object Array Dictionary)
+        keywords = %w[if elif else for while match break continue pass return class class_name extends is as self signal func static const enum var onready export setget tool yield preload load assert breakpoint in not and or await super]
+        constants = %w[true false null]
+        types = %w[void bool int float String Vector2 Vector3 Color Rect2 Transform2D Transform3D Basis Quat AABB Plane NodePath RID Object Array Dictionary]
 
         comment = State.new(:comment)
         comment.add_rule Rule.new(/[^\n]*/, Tokens::CommentSingle, pop: true)

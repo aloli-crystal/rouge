@@ -26,7 +26,7 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(and as dim each else elseif end endif endwhile exit false for function goto if in invalid let line next not objfun or pos print return step stop sub tab then to true type void while end\s+function end\s+sub end\s+if end\s+for end\s+while)
+        keywords = %w[and as dim each else elseif end endif endwhile exit false for function goto if in invalid let line next not objfun or pos print return step stop sub tab then to true type void while end\s+function end\s+sub end\s+if end\s+for end\s+while]
 
         string_double = State.new(:string_double)
         string_double.add_rule Rule.new(/"/, Tokens::StrDouble, pop: true)

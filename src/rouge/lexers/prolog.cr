@@ -26,14 +26,14 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        builtins = %w(
+        builtins = %w[
           is mod rem not true fail assert retract asserta assertz abolish
           findall bagof setof forall between succ plus arg functor copy_term
           term_variables numbervars predicate_property ground compound callable
           number integer float atom var nonvar read write writeln nl get_char
           put_char char_code atom_chars atom_codes atom_length atom_concat
           number_chars number_codes sub_atom char_type upcase_atom downcase_atom
-        )
+        ]
 
         bi_pattern = builtins.join("|")
 

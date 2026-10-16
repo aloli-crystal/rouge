@@ -26,7 +26,7 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(abstract assert assume break by calc case class codatatype colemma constructor copredicate datatype decreases else ensures exists extends forall fresh function ghost if import in include inductive invariant iterator label lemma match method modifies modify module new newtype old opened predicate print provides reads refines requires return returns reveal static then this trait twostate type unchanged var while witness yield yields)
+        keywords = %w[abstract assert assume break by calc case class codatatype colemma constructor copredicate datatype decreases else ensures exists extends forall fresh function ghost if import in include inductive invariant iterator label lemma match method modifies modify module new newtype old opened predicate print provides reads refines requires return returns reveal static then this trait twostate type unchanged var while witness yield yields]
 
         comment_block = State.new(:comment_block)
         comment_block.add_rule Rule.new(/\*\//, Tokens::CommentMultiline, pop: true)

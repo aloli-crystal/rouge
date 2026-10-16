@@ -26,19 +26,19 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(
+        keywords = %w[
           BEGIN END alias and begin break case class def do else elsif end
           ensure for if in module next not or redo rescue retry return self
           super then undef unless until when while yield
-        )
+        ]
 
-        constants = %w(true false nil __FILE__ __LINE__ __ENCODING__)
+        constants = %w[true false nil __FILE__ __LINE__ __ENCODING__]
 
-        builtins = %w(
+        builtins = %w[
           puts print p require require_relative include extend
           attr_reader attr_writer attr_accessor raise lambda proc
           loop open gets chomp
-        )
+        ]
 
         kw_pattern = keywords.join("|")
         const_pattern = constants.join("|").gsub("__", "__")

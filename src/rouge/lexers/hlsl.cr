@@ -26,9 +26,9 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(if else for while do return break continue switch case default struct typedef extern static const volatile inline discard)
-        types = %w(void bool int uint float half double float2 float3 float4 int2 int3 int4 half2 half3 half4 matrix float2x2 float3x3 float4x4 cbuffer tbuffer RWTexture2D StructuredBuffer SamplerState Texture2D)
-        semantics = %w(SV_Position SV_Target SV_DispatchThreadID register packoffset numthreads)
+        keywords = %w[if else for while do return break continue switch case default struct typedef extern static const volatile inline discard]
+        types = %w[void bool int uint float half double float2 float3 float4 int2 int3 int4 half2 half3 half4 matrix float2x2 float3x3 float4x4 cbuffer tbuffer RWTexture2D StructuredBuffer SamplerState Texture2D]
+        semantics = %w[SV_Position SV_Target SV_DispatchThreadID register packoffset numthreads]
 
         comment_multi = State.new(:comment_multi)
         comment_multi.add_rule Rule.new(/\*\//, Tokens::CommentMultiline, pop: true)

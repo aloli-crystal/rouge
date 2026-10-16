@@ -26,10 +26,10 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        directives = %w(
+        directives = %w[
           include ifdef ifndef ifeq ifneq else endif define endef
           export unexport override vpath
-        )
+        ]
 
         directive_pattern = directives.join("|")
 

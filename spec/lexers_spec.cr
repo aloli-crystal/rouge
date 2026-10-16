@@ -47,15 +47,15 @@ describe Rouge::Lexers::HTML do
 
   it "tokenizes a complete HTML snippet" do
     html = <<-HTML
-    <!DOCTYPE html>
-    <html lang="en">
-    <head><title>Test</title></head>
-    <body>
-      <h1 class="title">Hello &amp; World</h1>
-      <!-- comment -->
-    </body>
-    </html>
-    HTML
+      <!DOCTYPE html>
+      <html lang="en">
+      <head><title>Test</title></head>
+      <body>
+        <h1 class="title">Hello &amp; World</h1>
+        <!-- comment -->
+      </body>
+      </html>
+      HTML
 
     lexer = Rouge::Lexers::HTML.new
     tokens = lexer.lex(html)
@@ -118,18 +118,18 @@ describe Rouge::Lexers::CSS do
 
   it "tokenizes a complete CSS snippet" do
     css = <<-CSS
-    /* Main styles */
-    body {
-      font-size: 16px;
-      color: #333;
-    }
-    .container {
-      margin: 0 auto;
-    }
-    @media (max-width: 768px) {
-      .container { width: 100%; }
-    }
-    CSS
+      /* Main styles */
+      body {
+        font-size: 16px;
+        color: #333;
+      }
+      .container {
+        margin: 0 auto;
+      }
+      @media (max-width: 768px) {
+        .container { width: 100%; }
+      }
+      CSS
 
     lexer = Rouge::Lexers::CSS.new
     tokens = lexer.lex(css)
@@ -216,13 +216,13 @@ describe Rouge::Lexers::Javascript do
 
   it "tokenizes a complete JS snippet" do
     js = <<-JS
-    // Greet function
-    async function greet(name) {
-      const msg = `Hello, ${name}!`;
-      console.log(msg);
-      return true;
-    }
-    JS
+      // Greet function
+      async function greet(name) {
+        const msg = `Hello, ${name}!`;
+        console.log(msg);
+        return true;
+      }
+      JS
 
     lexer = Rouge::Lexers::Javascript.new
     tokens = lexer.lex(js)
@@ -314,17 +314,17 @@ describe Rouge::Lexers::Python do
 
   it "tokenizes a complete Python snippet" do
     py = <<-PY
-    # Calculator
-    def add(a, b):
-        """Add two numbers."""
-        return a + b
+      # Calculator
+      def add(a, b):
+          """Add two numbers."""
+          return a + b
 
-    @staticmethod
-    def multiply(x, y):
-        result = x * y
-        print(f"Result: {result}")
-        return result
-    PY
+      @staticmethod
+      def multiply(x, y):
+          result = x * y
+          print(f"Result: {result}")
+          return result
+      PY
 
     lexer = Rouge::Lexers::Python.new
     tokens = lexer.lex(py)

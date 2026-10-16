@@ -26,27 +26,27 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        c_keywords = %w(
+        c_keywords = %w[
           auto break case const continue default do else enum extern for goto if
           inline register restrict return sizeof static struct switch typedef
           union volatile while
-        )
+        ]
 
-        objc_keywords = %w(
+        objc_keywords = %w[
           self super nil Nil YES NO id Class SEL IMP BOOL instancetype
-        )
+        ]
 
-        objc_directives = %w(
+        objc_directives = %w[
           @interface @implementation @end @protocol @optional @required @property
           @synthesize @dynamic @class @selector @encode @synchronized @try @catch
           @finally @throw @autoreleasepool
-        )
+        ]
 
-        types = %w(
+        types = %w[
           int long short char float double void unsigned signed size_t
           NSInteger NSUInteger CGFloat NSString NSArray NSDictionary NSNumber
           NSObject NSMutableArray NSMutableDictionary NSMutableString
-        )
+        ]
 
         kw_pattern = (c_keywords + objc_keywords).join("|")
         dir_pattern = objc_directives.map { |d| Regex.escape(d) }.join("|")

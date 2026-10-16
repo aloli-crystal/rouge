@@ -26,8 +26,8 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(abstract break case cast catch class continue default do dynamic else enum extern false final for function if implements import in inline interface macro new null operator overload override package private public return static switch this throw true try typedef untyped using var while)
-        types = %w(Void Bool Int Float String Dynamic Array Map)
+        keywords = %w[abstract break case cast catch class continue default do dynamic else enum extern false final for function if implements import in inline interface macro new null operator overload override package private public return static switch this throw true try typedef untyped using var while]
+        types = %w[Void Bool Int Float String Dynamic Array Map]
 
         comment = State.new(:comment)
         comment.add_rule Rule.new(/[^\n]*/, Tokens::CommentSingle, pop: true)

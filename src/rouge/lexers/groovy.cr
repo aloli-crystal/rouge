@@ -26,9 +26,9 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(as assert break case catch class const continue def default do else enum extends finally for goto if implements import in instanceof interface new package return super switch this throw throws trait try while)
-        constants = %w(true false null)
-        types = %w(boolean byte char double float int long short void String Object)
+        keywords = %w[as assert break case catch class const continue def default do else enum extends finally for goto if implements import in instanceof interface new package return super switch this throw throws trait try while]
+        constants = %w[true false null]
+        types = %w[boolean byte char double float int long short void String Object]
 
         comment = State.new(:comment)
         comment.add_rule Rule.new(/[^\n]*/, Tokens::CommentSingle, pop: true)

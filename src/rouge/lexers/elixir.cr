@@ -26,14 +26,14 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(
+        keywords = %w[
           after and case catch cond def defcallback defdelegate defexception
           defimpl defmacro defmacrop defmodule defoverridable defp defprotocol
           defstruct do else end fn for if import in not or quote raise receive
           require rescue try unless unquote unquote_splicing use when with
-        )
+        ]
 
-        constants = %w(true false nil)
+        constants = %w[true false nil]
 
         kw_pattern = keywords.join("|")
         const_pattern = constants.join("|")

@@ -26,8 +26,8 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(If Then Else For While Break Continue Return Function Try Catch Throw Local Include)
-        builtins = %w(Show Print Write Eval Substitute Expr Match Contains StartsWith EndsWith Trim Concat Insert Remove)
+        keywords = %w[If Then Else For While Break Continue Return Function Try Catch Throw Local Include]
+        builtins = %w[Show Print Write Eval Substitute Expr Match Contains StartsWith EndsWith Trim Concat Insert Remove]
 
         comment_multi = State.new(:comment_multi)
         comment_multi.add_rule Rule.new(/\*\//, Tokens::CommentMultiline, pop: true)

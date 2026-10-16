@@ -26,11 +26,11 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(
+        keywords = %w[
           break case catch classdef continue else elseif end enumeration events
           for function global if methods otherwise parfor persistent properties
           return spmd switch try while
-        )
+        ]
 
         kw_pattern = keywords.join("|")
 

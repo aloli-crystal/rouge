@@ -26,17 +26,17 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(
+        keywords = %w[
           auto break case const continue default do else enum extern for goto
           if inline register restrict return sizeof static struct switch typedef
           union volatile while _Bool _Complex _Imaginary
-        )
+        ]
 
-        types = %w(
+        types = %w[
           int char float double void long short unsigned signed
           size_t int8_t int16_t int32_t int64_t uint8_t uint16_t uint32_t uint64_t
           bool FILE
-        )
+        ]
 
         kw_pattern = keywords.join("|")
         type_pattern = types.join("|")

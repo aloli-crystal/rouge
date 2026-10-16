@@ -26,7 +26,7 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        elixir_keywords = %w(def defp defmodule do end if else unless case cond fn for with raise rescue try catch after quote unquote require import use alias when in and or not true false nil)
+        elixir_keywords = %w[def defp defmodule do end if else unless case cond fn for with raise rescue try catch after quote unquote require import use alias when in and or not true false nil]
 
         eex_code = State.new(:eex_code)
         eex_code.add_rule Rule.new(/%>/, Tokens::CommentPreproc, pop: true)

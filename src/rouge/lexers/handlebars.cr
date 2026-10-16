@@ -26,7 +26,7 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        helpers = %w(if else unless each with lookup log blockHelperMissing helperMissing)
+        helpers = %w[if else unless each with lookup log blockHelperMissing helperMissing]
 
         tag = State.new(:tag)
         tag.add_rule Rule.new(/\s+/, Tokens::TextWhitespace)

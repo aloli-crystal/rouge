@@ -26,7 +26,7 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(var function return if else for while do switch case default break continue try catch finally throw new component property import include abort exit param thread lock transaction savecontent)
+        keywords = %w[var function return if else for while do switch case default break continue try catch finally throw new component property import include abort exit param thread lock transaction savecontent]
 
         comment_block = State.new(:comment_block)
         comment_block.add_rule Rule.new(/\*\//, Tokens::CommentMultiline, pop: true)

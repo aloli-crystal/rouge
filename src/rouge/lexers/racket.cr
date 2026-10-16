@@ -26,11 +26,11 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(
+        keywords = %w[
           #lang define let let\\* letrec lambda if cond case when unless begin
           for for/list for/fold struct class interface provide require module
           match syntax-parse define-syntax
-        )
+        ]
 
         kw_pattern = keywords.join("|")
 

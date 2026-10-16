@@ -26,7 +26,7 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(module import data where let in do record class instance interface implementation case of if then else with proof total partial covering mutual namespace parameters using public private export implicit auto default impossible rewrite syntax prefix infix infixl infixr pattern)
+        keywords = %w[module import data where let in do record class instance interface implementation case of if then else with proof total partial covering mutual namespace parameters using public private export implicit auto default impossible rewrite syntax prefix infix infixl infixr pattern]
 
         comment_multi = State.new(:comment_multi)
         comment_multi.add_rule Rule.new(/-\}/, Tokens::CommentMultiline, pop: true)

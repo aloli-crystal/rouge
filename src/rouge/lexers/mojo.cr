@@ -26,19 +26,19 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(
+        keywords = %w[
           and as assert async await break class continue def del elif else except
           finally for from global if import in is lambda not or pass raise return
           try while with yield
           fn struct alias var let owned borrowed inout raises capturing parameter
           always_inline register_passable trait
-        )
+        ]
 
-        builtins = %w(
+        builtins = %w[
           SIMD DType Tensor String Int Float Bool True False None self Self
           print len range type isinstance hasattr getattr setattr
           __mlir_type __mlir_op __mlir_attr
-        )
+        ]
 
         kw_pattern = keywords.join("|")
         bi_pattern = builtins.join("|")

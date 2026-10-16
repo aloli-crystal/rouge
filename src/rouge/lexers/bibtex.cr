@@ -26,7 +26,7 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        entry_types = %w(article book booklet conference inbook incollection inproceedings manual mastersthesis misc phdthesis proceedings techreport unpublished string preamble comment)
+        entry_types = %w[article book booklet conference inbook incollection inproceedings manual mastersthesis misc phdthesis proceedings techreport unpublished string preamble comment]
 
         string_double = State.new(:string_double)
         string_double.add_rule Rule.new(/\\./, Tokens::StrEscape)

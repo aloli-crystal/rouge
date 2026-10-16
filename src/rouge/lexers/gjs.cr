@@ -26,7 +26,7 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(break case catch continue debugger default delete do else finally for function if in instanceof new return switch this throw try typeof var void while with let const class extends export import yield async await of)
+        keywords = %w[break case catch continue debugger default delete do else finally for function if in instanceof new return switch this throw try typeof var void while with let const class extends export import yield async await of]
 
         template = State.new(:template)
         template.add_rule Rule.new(/<\/template>/, Tokens::NameTag, pop: true)

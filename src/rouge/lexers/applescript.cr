@@ -26,7 +26,7 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(
+        keywords = %w[
           about above after against and apart around as aside at back before
           beginning behind below beneath beside between but by considering
           contain contains continue copy div does eighth else end equal equals
@@ -36,7 +36,7 @@ module Rouge
           return returning script second set seventh since sixth some tell tenth
           than that the then third through thru timeout times to transaction
           try until where while whose with without
-        )
+        ]
 
         kw_pattern = keywords.join("|")
 

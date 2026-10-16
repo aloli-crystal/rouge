@@ -26,10 +26,10 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(
+        keywords = %w[
           if then else case of let in type alias module where import exposing as
           port effect command subscription
-        )
+        ]
 
         kw_pattern = keywords.join("|")
 

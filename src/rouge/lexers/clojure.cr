@@ -26,8 +26,8 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(def defn defn- defmacro defmethod defmulti defonce defprotocol defrecord defstruct deftype fn let letfn if if-let if-not do when when-let when-not when-first cond condp case loop for doseq dotimes recur ns require use import quote try catch finally throw)
-        constants = %w(nil true false)
+        keywords = %w[def defn defn- defmacro defmethod defmulti defonce defprotocol defrecord defstruct deftype fn let letfn if if-let if-not do when when-let when-not when-first cond condp case loop for doseq dotimes recur ns require use import quote try catch finally throw]
+        constants = %w[nil true false]
 
         comment = State.new(:comment)
         comment.add_rule Rule.new(/[^\n]*/, Tokens::CommentSingle, pop: true)

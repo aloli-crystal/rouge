@@ -11,7 +11,7 @@
 dependencies:
   rouge:
     github: aloli-crystal/rouge
-    version: "~> 4.7.0.3"
+    version: "~> 4.7.0.4"
 ----
 
 Then run:

@@ -26,7 +26,7 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(
+        keywords = %w[
           access after alias all and architecture array assert attribute begin
           block body buffer bus case component configuration constant disconnect
           downto else elsif end entity exit file for function generate generic
@@ -36,12 +36,12 @@ module Rouge
           reject rem report return rol ror select severity signal shared sla sll
           sra srl subtype then to transport type unaffected units until use
           variable wait when while with xnor xor
-        )
+        ]
 
-        types = %w(
+        types = %w[
           bit bit_vector boolean character integer natural positive real
           std_logic std_logic_vector std_ulogic string time
-        )
+        ]
 
         kw_pattern = keywords.join("|")
         type_pattern = types.join("|")

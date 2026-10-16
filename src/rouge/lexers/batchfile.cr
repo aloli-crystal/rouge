@@ -26,7 +26,7 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(echo set if else for goto call exit rem pause cls dir copy move del mkdir rmdir type find sort more start title color prompt path pushd popd setlocal endlocal enabledelayedexpansion do in not exist defined equ neq lss leq gtr geq nul)
+        keywords = %w[echo set if else for goto call exit rem pause cls dir copy move del mkdir rmdir type find sort more start title color prompt path pushd popd setlocal endlocal enabledelayedexpansion do in not exist defined equ neq lss leq gtr geq nul]
 
         comment = State.new(:comment)
         comment.add_rule Rule.new(/[^\n]*/, Tokens::CommentSingle, pop: true)

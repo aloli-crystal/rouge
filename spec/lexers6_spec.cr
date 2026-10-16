@@ -82,16 +82,16 @@ describe Rouge::Lexers::Haskell do
 
   it "tokenizes a complete Haskell snippet" do
     hs_code = <<-HS
-    module Main where
+      module Main where
 
-    -- Factorial function
-    factorial :: Int -> Int
-    factorial 0 = 1
-    factorial n = n * factorial (n - 1)
+      -- Factorial function
+      factorial :: Int -> Int
+      factorial 0 = 1
+      factorial n = n * factorial (n - 1)
 
-    main :: IO ()
-    main = print (factorial 10)
-    HS
+      main :: IO ()
+      main = print (factorial 10)
+      HS
 
     lexer = Rouge::Lexers::Haskell.new
     tokens = lexer.lex(hs_code)
@@ -175,15 +175,15 @@ describe Rouge::Lexers::Dart do
 
   it "tokenizes a complete Dart snippet" do
     dart_code = <<-DART
-    import 'package:flutter/material.dart';
+      import 'package:flutter/material.dart';
 
-    @override
-    void main() {
-      final name = 'World';
-      print('Hello, $name!');
-      var x = 42;
-    }
-    DART
+      @override
+      void main() {
+        final name = 'World';
+        print('Hello, $name!');
+        var x = 42;
+      }
+      DART
 
     lexer = Rouge::Lexers::Dart.new
     tokens = lexer.lex(dart_code)
@@ -272,15 +272,15 @@ describe Rouge::Lexers::PowerShell do
 
   it "tokenizes a complete PowerShell snippet" do
     ps_code = <<-PS
-    # Read a file
-    Function Get-Data {
-        Param($path)
-        If (Test-Path $path) {
-            $content = Get-Content $path
-            Write-Output $content
-        }
-    }
-    PS
+      # Read a file
+      Function Get-Data {
+          Param($path)
+          If (Test-Path $path) {
+              $content = Get-Content $path
+              Write-Output $content
+          }
+      }
+      PS
 
     lexer = Rouge::Lexers::PowerShell.new
     tokens = lexer.lex(ps_code)
@@ -346,20 +346,20 @@ describe Rouge::Lexers::Nginx do
 
   it "tokenizes a complete Nginx snippet" do
     nginx_code = <<-NGINX
-    server {
-        listen 80;
-        server_name example.com;
-        root /var/www/html;
+      server {
+          listen 80;
+          server_name example.com;
+          root /var/www/html;
 
-        location / {
-            proxy_pass http://backend;
-            proxy_set_header Host $host;
-        }
+          location / {
+              proxy_pass http://backend;
+              proxy_set_header Host $host;
+          }
 
-        # Enable gzip
-        gzip on;
-    }
-    NGINX
+          # Enable gzip
+          gzip on;
+      }
+      NGINX
 
     lexer = Rouge::Lexers::Nginx.new
     tokens = lexer.lex(nginx_code)
@@ -446,16 +446,16 @@ describe Rouge::Lexers::INI do
 
   it "tokenizes a complete INI snippet" do
     ini_code = <<-INI
-    ; Database config
-    [database]
-    host = localhost
-    port = 5432
-    enabled = true
+      ; Database config
+      [database]
+      host = localhost
+      port = 5432
+      enabled = true
 
-    [logging]
-    level = debug
-    file = "/var/log/app.log"
-    INI
+      [logging]
+      level = debug
+      file = "/var/log/app.log"
+      INI
 
     lexer = Rouge::Lexers::INI.new
     tokens = lexer.lex(ini_code)

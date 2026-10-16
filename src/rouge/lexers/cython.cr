@@ -26,9 +26,9 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(and as assert async await break class continue def del elif else except exec finally for from global if import in is lambda not or pass print raise return try while with yield)
-        cython_kw = %w(cdef cpdef ctypedef cimport DEF IF ELIF ELSE include by fused nogil gil property)
-        types = %w(int float double char void bint Py_ssize_t size_t long short unsigned signed object str list dict tuple set frozenset bool bytes)
+        keywords = %w[and as assert async await break class continue def del elif else except exec finally for from global if import in is lambda not or pass print raise return try while with yield]
+        cython_kw = %w[cdef cpdef ctypedef cimport DEF IF ELIF ELSE include by fused nogil gil property]
+        types = %w[int float double char void bint Py_ssize_t size_t long short unsigned signed object str list dict tuple set frozenset bool bytes]
 
         string_double = State.new(:string_double)
         string_double.add_rule Rule.new(/\\./, Tokens::StrEscape)

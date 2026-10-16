@@ -26,17 +26,17 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(if else repeat while function for in next break return switch tryCatch)
+        keywords = %w[if else repeat while function for in next break return switch tryCatch]
 
-        constants = %w(TRUE FALSE NULL NA NA_integer_ NA_real_ NA_complex_ NA_character_ Inf NaN T F)
+        constants = %w[TRUE FALSE NULL NA NA_integer_ NA_real_ NA_complex_ NA_character_ Inf NaN T F]
 
-        builtins = %w(
+        builtins = %w[
           c list data.frame matrix vector print cat paste paste0 length nrow ncol
           dim names class str summary head tail which seq rep sort order unique
           table apply sapply lapply tapply mapply library require install.packages
           source setwd getwd read.csv write.csv plot hist barplot ggplot mean
           median sd var sum min max abs sqrt log exp round ceiling floor
-        )
+        ]
 
         kw_pattern = keywords.join("|")
         const_pattern = constants.map { |c| Regex.escape(c) }.join("|")

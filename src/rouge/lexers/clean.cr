@@ -26,8 +26,8 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(module import from definition implementation system class instance where let in if case of otherwise with infix infixl infixr special dynamic code inline derive generic)
-        types = %w(Start Bool Char Int Real String True False Nothing)
+        keywords = %w[module import from definition implementation system class instance where let in if case of otherwise with infix infixl infixr special dynamic code inline derive generic]
+        types = %w[Start Bool Char Int Real String True False Nothing]
 
         comment_block = State.new(:comment_block)
         comment_block.add_rule Rule.new(/\*\//, Tokens::CommentMultiline, pop: true)

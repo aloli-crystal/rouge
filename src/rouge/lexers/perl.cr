@@ -26,19 +26,19 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(
+        keywords = %w[
           bless caller cmp continue die do dump else elsif eq eval exit for
           foreach ge goto grep gt if import last le local lt map my ne next no
           our package print printf redo require return say sort sub tie tied
           unless until untie use wantarray warn while
-        )
+        ]
 
-        builtins = %w(
+        builtins = %w[
           chomp chop chr close defined delete each exists fileno hex index int
           join keys lc lcfirst length oct open ord pack pop pos push quotemeta
           read ref reverse rindex scalar seek shift splice split sprintf substr
           system tell uc ucfirst unlink unpack unshift values write
-        )
+        ]
 
         kw_pattern = keywords.join("|")
         builtin_pattern = builtins.join("|")

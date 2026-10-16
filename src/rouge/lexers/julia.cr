@@ -26,9 +26,9 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(abstract baremodule begin break catch ccall const continue do else elseif end export finally for function global if import in isa let local macro module mutable new primitive quote return struct try type typealias using where while)
-        types = %w(Int8 Int16 Int32 Int64 Int128 UInt8 UInt16 UInt32 UInt64 UInt128 Float16 Float32 Float64 Bool Char String Symbol Array Dict Set Tuple Nothing Any Union Type Function IO Number Integer AbstractFloat Real Complex Rational BigInt BigFloat Vector Matrix Regex SubString IOBuffer Channel Task Ref Ptr)
-        constants = %w(true false nothing missing Inf NaN pi)
+        keywords = %w[abstract baremodule begin break catch ccall const continue do else elseif end export finally for function global if import in isa let local macro module mutable new primitive quote return struct try type typealias using where while]
+        types = %w[Int8 Int16 Int32 Int64 Int128 UInt8 UInt16 UInt32 UInt64 UInt128 Float16 Float32 Float64 Bool Char String Symbol Array Dict Set Tuple Nothing Any Union Type Function IO Number Integer AbstractFloat Real Complex Rational BigInt BigFloat Vector Matrix Regex SubString IOBuffer Channel Task Ref Ptr]
+        constants = %w[true false nothing missing Inf NaN pi]
 
         comment = State.new(:comment)
         comment.add_rule Rule.new(/[^\n]*/, Tokens::CommentSingle, pop: true)

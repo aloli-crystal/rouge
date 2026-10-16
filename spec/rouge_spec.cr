@@ -109,14 +109,14 @@ describe Rouge::Lexers::JSON do
 
   it "tokenizes a complete JSON document" do
     json = <<-JSON
-    {
-      "name": "Crystal",
-      "version": 1.19,
-      "stable": true,
-      "features": ["fast", "safe"],
-      "meta": null
-    }
-    JSON
+      {
+        "name": "Crystal",
+        "version": 1.19,
+        "stable": true,
+        "features": ["fast", "safe"],
+        "meta": null
+      }
+      JSON
 
     lexer = Rouge::Lexers::JSON.new
     tokens = lexer.lex(json)
@@ -288,7 +288,7 @@ describe Rouge::Lexers::Shell do
   end
 
   it "can be found by multiple tags" do
-    %w(shell bash sh zsh).each do |tag|
+    %w[shell bash sh zsh].each do |tag|
       lexer = Rouge::RegexLexer.find(tag)
       lexer.should_not be_nil
       lexer.should be_a(Rouge::Lexers::Shell)

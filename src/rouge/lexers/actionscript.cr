@@ -26,9 +26,9 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(break case catch class continue default delete do dynamic each else extends final finally for function get if implements import in include interface internal is namespace native new override package private protected public return set static super switch this throw try typeof use var void while with)
-        constants = %w(true false null undefined NaN Infinity)
-        types = %w(int uint Number String Boolean Object Array Date RegExp Function XML XMLList Error)
+        keywords = %w[break case catch class continue default delete do dynamic each else extends final finally for function get if implements import in include interface internal is namespace native new override package private protected public return set static super switch this throw try typeof use var void while with]
+        constants = %w[true false null undefined NaN Infinity]
+        types = %w[int uint Number String Boolean Object Array Date RegExp Function XML XMLList Error]
 
         comment = State.new(:comment)
         comment.add_rule Rule.new(/[^\n]*/, Tokens::CommentSingle, pop: true)

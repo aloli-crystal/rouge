@@ -26,9 +26,9 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(and as assert async await break class continue def del elif else except finally for from global if import in is lambda nonlocal not or pass raise return try while with yield)
-        builtins = %w(print len range type int str float bool list dict tuple set input open map filter zip enumerate sorted reversed abs min max sum round isinstance issubclass hasattr getattr setattr super property staticmethod classmethod object bytes bytearray memoryview frozenset complex hex oct bin chr ord repr format hash id iter next vars dir help any all)
-        constants = %w(None True False NotImplemented Ellipsis __debug__)
+        keywords = %w[and as assert async await break class continue def del elif else except finally for from global if import in is lambda nonlocal not or pass raise return try while with yield]
+        builtins = %w[print len range type int str float bool list dict tuple set input open map filter zip enumerate sorted reversed abs min max sum round isinstance issubclass hasattr getattr setattr super property staticmethod classmethod object bytes bytearray memoryview frozenset complex hex oct bin chr ord repr format hash id iter next vars dir help any all]
+        constants = %w[None True False NotImplemented Ellipsis __debug__]
 
         # :comment
         comment = State.new(:comment)

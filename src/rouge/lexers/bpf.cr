@@ -26,8 +26,8 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        instructions = %w(ldw ldh ldb stw sth stb jmp jeq jne jgt jge jlt jle jset call exit mov add sub mul div mod and or xor lsh rsh neg arsh ja lock xadd)
-        registers = %w(r0 r1 r2 r3 r4 r5 r6 r7 r8 r9 r10)
+        instructions = %w[ldw ldh ldb stw sth stb jmp jeq jne jgt jge jlt jle jset call exit mov add sub mul div mod and or xor lsh rsh neg arsh ja lock xadd]
+        registers = %w[r0 r1 r2 r3 r4 r5 r6 r7 r8 r9 r10]
 
         root = State.new(:root)
         root.add_rule Rule.new(/\s+/, Tokens::TextWhitespace)

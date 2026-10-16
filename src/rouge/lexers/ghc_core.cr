@@ -26,7 +26,7 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(case of let in letrec data newtype forall module where)
+        keywords = %w[case of let in letrec data newtype forall module where]
 
         root = State.new(:root)
         root.add_rule Rule.new(/\s+/, Tokens::TextWhitespace)

@@ -26,9 +26,9 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(abstract and as assert base begin class default delegate do done downcast downto elif else end exception extern finally for fun function global if in inherit inline interface internal lazy let match member module mutable namespace new not null of open or override private public rec return select static struct then to try type upcast use val void when while with yield)
-        types = %w(bool byte char decimal double float int int16 int32 int64 nativeint sbyte single string uint16 uint32 uint64 unativeint unit)
-        constants = %w(true false)
+        keywords = %w[abstract and as assert base begin class default delegate do done downcast downto elif else end exception extern finally for fun function global if in inherit inline interface internal lazy let match member module mutable namespace new not null of open or override private public rec return select static struct then to try type upcast use val void when while with yield]
+        types = %w[bool byte char decimal double float int int16 int32 int64 nativeint sbyte single string uint16 uint32 uint64 unativeint unit]
+        constants = %w[true false]
 
         comment = State.new(:comment)
         comment.add_rule Rule.new(/[^\n]*/, Tokens::CommentSingle, pop: true)

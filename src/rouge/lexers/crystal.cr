@@ -26,19 +26,19 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(
+        keywords = %w[
           abstract alias annotation as asm begin break case class def do else elsif
           end ensure enum extend for forall fun if in include instance_sizeof
           lib macro module next of out pointerof private protected puts raise
           require rescue return select self sizeof struct super then typeof type
           uninitialized union unless until verbatim when while with yield
-        )
+        ]
 
-        builtin_types = %w(
+        builtin_types = %w[
           Int8 Int16 Int32 Int64 Int128 UInt8 UInt16 UInt32 UInt64 UInt128
           Float32 Float64 Bool String Char Nil Array Hash Range Tuple NamedTuple
           Proc Symbol Regex IO File Dir Time Exception Fiber Channel
-        )
+        ]
 
         kw_pattern = keywords.join("|")
         # is_a? nil? responds_to? need special regex handling

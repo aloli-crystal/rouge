@@ -26,7 +26,7 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(If Then ElsIf Else EndIf For Each In To Do EndDo While EndWhile Procedure EndProcedure Function EndFunction Var Return Continue Break Try Except EndTry Raise Export New Execute Goto And Or Not)
+        keywords = %w[If Then ElsIf Else EndIf For Each In To Do EndDo While EndWhile Procedure EndProcedure Function EndFunction Var Return Continue Break Try Except EndTry Raise Export New Execute Goto And Or Not]
 
         string_double = State.new(:string_double)
         string_double.add_rule Rule.new(/""/, Tokens::StrEscape)

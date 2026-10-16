@@ -26,7 +26,7 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(defun defmacro defvar defparameter defconstant defclass defgeneric defmethod defpackage defstruct deftype lambda let let\\* flet labels block catch throw tagbody go progn prog1 prog2 if cond case typecase when unless loop do do\\* dolist dotimes return return-from format funcall apply mapcar mapc setf setq quote eval declare declaim proclaim the multiple-value-bind values handler-case handler-bind restart-case with-slots with-accessors make-instance)
+        keywords = %w[defun defmacro defvar defparameter defconstant defclass defgeneric defmethod defpackage defstruct deftype lambda let let\\* flet labels block catch throw tagbody go progn prog1 prog2 if cond case typecase when unless loop do do\\* dolist dotimes return return-from format funcall apply mapcar mapc setf setq quote eval declare declaim proclaim the multiple-value-bind values handler-case handler-bind restart-case with-slots with-accessors make-instance]
 
         comment_block = State.new(:comment_block)
         comment_block.add_rule Rule.new(/\|#/, Tokens::CommentMultiline, pop: true)

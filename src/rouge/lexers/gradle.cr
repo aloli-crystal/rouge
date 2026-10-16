@@ -26,8 +26,8 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(apply plugin dependencies repositories task buildscript allprojects subprojects configurations sourceSets jar test if else for while do return break continue try catch finally throw switch case default new import package class interface extends implements abstract static final void)
-        builtins = %w(implementation api compileOnly runtimeOnly testImplementation classpath mavenCentral jcenter google maven version group)
+        keywords = %w[apply plugin dependencies repositories task buildscript allprojects subprojects configurations sourceSets jar test if else for while do return break continue try catch finally throw switch case default new import package class interface extends implements abstract static final void]
+        builtins = %w[implementation api compileOnly runtimeOnly testImplementation classpath mavenCentral jcenter google maven version group]
 
         comment_multi = State.new(:comment_multi)
         comment_multi.add_rule Rule.new(/\*\//, Tokens::CommentMultiline, pop: true)

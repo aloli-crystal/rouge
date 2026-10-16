@@ -26,8 +26,8 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(define type trait import public private protected provide require local var if else loop while iterate return abort fail handle protect not and or)
-        constants = %w(true false null void self inherited currentcapture givenblock)
+        keywords = %w[define type trait import public private protected provide require local var if else loop while iterate return abort fail handle protect not and or]
+        constants = %w[true false null void self inherited currentcapture givenblock]
 
         comment = State.new(:comment)
         comment.add_rule Rule.new(/[^\n]*/, Tokens::CommentSingle, pop: true)

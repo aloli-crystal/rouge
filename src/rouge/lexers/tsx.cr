@@ -26,17 +26,17 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(
+        keywords = %w[
           var let const function return if else for while do switch case break
           continue new this class extends import export default from try catch
           finally throw typeof instanceof in of async await yield delete void
           with debugger super static get set
           interface type enum namespace abstract implements declare readonly
           keyof infer is asserts override satisfies as
-        )
+        ]
 
-        type_keywords = %w(any never unknown void number string boolean symbol bigint object)
-        constants = %w(true false null undefined NaN Infinity)
+        type_keywords = %w[any never unknown void number string boolean symbol bigint object]
+        constants = %w[true false null undefined NaN Infinity]
 
         kw_pattern = keywords.join("|")
         type_kw_pattern = type_keywords.join("|")

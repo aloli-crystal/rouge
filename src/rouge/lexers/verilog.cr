@@ -26,7 +26,7 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(
+        keywords = %w[
           always and assign automatic begin buf bufif0 bufif1 case casex casez
           cmos deassign default defparam disable edge else end endcase endfunction
           endgenerate endmodule endprimitive endspecify endtable endtask event for
@@ -37,9 +37,9 @@ module Rouge
           rnmos rpmos rtran rtranif0 rtranif1 scalared small specify specparam
           strong0 strong1 supply0 supply1 table task tran tranif0 tranif1 tri tri0
           tri1 triand trior trireg vectored wait wand weak0 weak1 while wor xnor xor
-        )
+        ]
 
-        types = %w(integer real time realtime reg wire)
+        types = %w[integer real time realtime reg wire]
 
         kw_pattern = keywords.join("|")
         type_pattern = types.join("|")

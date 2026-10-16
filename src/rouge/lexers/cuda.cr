@@ -26,10 +26,10 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(auto break case catch class const const_cast constexpr continue decltype default delete do dynamic_cast else enum explicit extern false for friend goto if inline namespace new noexcept nullptr operator override private protected public register reinterpret_cast return sizeof static static_assert static_cast struct switch template this throw true try typedef typeid typename union using virtual volatile while)
-        cuda_keywords = %w(__global__ __device__ __host__ __shared__ __constant__ __managed__ __restrict__ __noinline__ __forceinline__)
-        cuda_builtins = %w(threadIdx blockIdx blockDim gridDim warpSize cudaMalloc cudaFree cudaMemcpy cudaDeviceSynchronize cudaGetLastError cudaMemcpyHostToDevice cudaMemcpyDeviceToHost cudaMemcpyDeviceToDevice cudaSetDevice cudaGetDeviceCount)
-        types = %w(bool char double float int long short signed unsigned void dim3 int8_t int16_t int32_t int64_t uint8_t uint16_t uint32_t uint64_t size_t float2 float3 float4 int2 int3 int4 uint2 uint3 uint4 char2 char3 char4)
+        keywords = %w[auto break case catch class const const_cast constexpr continue decltype default delete do dynamic_cast else enum explicit extern false for friend goto if inline namespace new noexcept nullptr operator override private protected public register reinterpret_cast return sizeof static static_assert static_cast struct switch template this throw true try typedef typeid typename union using virtual volatile while]
+        cuda_keywords = %w[__global__ __device__ __host__ __shared__ __constant__ __managed__ __restrict__ __noinline__ __forceinline__]
+        cuda_builtins = %w[threadIdx blockIdx blockDim gridDim warpSize cudaMalloc cudaFree cudaMemcpy cudaDeviceSynchronize cudaGetLastError cudaMemcpyHostToDevice cudaMemcpyDeviceToHost cudaMemcpyDeviceToDevice cudaSetDevice cudaGetDeviceCount]
+        types = %w[bool char double float int long short signed unsigned void dim3 int8_t int16_t int32_t int64_t uint8_t uint16_t uint32_t uint64_t size_t float2 float3 float4 int2 int3 int4 uint2 uint3 uint4 char2 char3 char4]
 
         comment = State.new(:comment)
         comment.add_rule Rule.new(/[^\n]*/, Tokens::CommentSingle, pop: true)

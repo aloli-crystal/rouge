@@ -26,8 +26,8 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(interface ip router hostname enable no permit deny any host log shutdown description vlan switchport trunk encapsulation service banner line username password crypto ntp logging)
-        commands = %w(access-list spanning-tree snmp-server)
+        keywords = %w[interface ip router hostname enable no permit deny any host log shutdown description vlan switchport trunk encapsulation service banner line username password crypto ntp logging]
+        commands = %w[access-list spanning-tree snmp-server]
 
         root = State.new(:root)
         root.add_rule Rule.new(/\s+/, Tokens::TextWhitespace)

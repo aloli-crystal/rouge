@@ -26,8 +26,8 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(if else unless switch case default for while until loop in of by to til then do return break continue fallthrough throw try catch finally class extends implements new delete typeof instanceof not and or is isnt let const var function require import export)
-        constants = %w(true false null undefined void this that it)
+        keywords = %w[if else unless switch case default for while until loop in of by to til then do return break continue fallthrough throw try catch finally class extends implements new delete typeof instanceof not and or is isnt let const var function require import export]
+        constants = %w[true false null undefined void this that it]
 
         comment_multi = State.new(:comment_multi)
         comment_multi.add_rule Rule.new(/\*\//, Tokens::CommentMultiline, pop: true)

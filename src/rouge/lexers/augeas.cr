@@ -26,7 +26,7 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(module let del store value seq key label counter lens regexp string test get put after before autoload transform incl excl)
+        keywords = %w[module let del store value seq key label counter lens regexp string test get put after before autoload transform incl excl]
 
         comment_block = State.new(:comment_block)
         comment_block.add_rule Rule.new(/\*\)/, Tokens::CommentMultiline, pop: true)

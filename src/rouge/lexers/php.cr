@@ -26,7 +26,7 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(
+        keywords = %w[
           abstract and as break callable case catch class clone const continue
           declare default do echo else elseif empty enddeclare endfor endforeach
           endif endswitch endwhile enum eval exit extends final finally fn for
@@ -34,10 +34,10 @@ module Rouge
           instanceof insteadof interface isset list match namespace new or print
           private protected public readonly require require_once return static
           switch throw trait try unset use var while xor yield
-        )
+        ]
 
-        constants = %w(true false null TRUE FALSE NULL)
-        types = %w(int float string bool array object void never mixed self parent)
+        constants = %w[true false null TRUE FALSE NULL]
+        types = %w[int float string bool array object void never mixed self parent]
 
         kw_pattern = keywords.join("|")
         const_pattern = constants.join("|")

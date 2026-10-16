@@ -26,9 +26,9 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(and array begin case class const constructor destructor div do downto else end file for function goto if implementation in inherited interface label mod not object of or packed procedure program record repeat set shl shr string then to type unit until uses var while with xor)
-        constants = %w(true false nil)
-        types = %w(integer shortint smallint longint int64 byte word longword cardinal boolean bytebool wordbool longbool char ansichar widechar pchar real single double extended comp currency pointer variant)
+        keywords = %w[and array begin case class const constructor destructor div do downto else end file for function goto if implementation in inherited interface label mod not object of or packed procedure program record repeat set shl shr string then to type unit until uses var while with xor]
+        constants = %w[true false nil]
+        types = %w[integer shortint smallint longint int64 byte word longword cardinal boolean bytebool wordbool longbool char ansichar widechar pchar real single double extended comp currency pointer variant]
 
         comment = State.new(:comment)
         comment.add_rule Rule.new(/[^\n]*/, Tokens::CommentSingle, pop: true)

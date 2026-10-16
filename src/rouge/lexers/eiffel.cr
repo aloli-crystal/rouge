@@ -26,14 +26,14 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(
+        keywords = %w[
           across agent alias all and as assign attribute check class convert
           create current debug deferred do else elseif end ensure expanded export
           external feature from frozen if implies indexing inherit inspect
           invariant is like local loop not note obsolete old once only or
           precursor redefine rename require rescue result retry select separate
           some then undefine until variant void when xor
-        )
+        ]
 
         kw_pattern = keywords.join("|")
 

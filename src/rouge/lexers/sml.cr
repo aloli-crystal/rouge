@@ -26,12 +26,12 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(
+        keywords = %w[
           abstype and andalso as case datatype do else end eqtype exception fn
           fun functor handle if in include infix infixr let local nonfix of op
           open orelse raise rec sharing sig signature struct structure then type
           val where while with withtype
-        )
+        ]
 
         kw_pattern = keywords.join("|")
 

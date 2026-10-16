@@ -26,7 +26,7 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(
+        keywords = %w[
           SELECT FROM WHERE INSERT UPDATE DELETE CREATE DROP ALTER TABLE INDEX
           JOIN LEFT RIGHT INNER OUTER ON AND OR NOT IN IS NULL AS ORDER BY
           GROUP HAVING LIMIT OFFSET UNION EXISTS BETWEEN LIKE SET INTO VALUES
@@ -34,12 +34,12 @@ module Rouge
           ROLLBACK GRANT REVOKE PRIMARY KEY FOREIGN REFERENCES CONSTRAINT
           DEFAULT CHECK UNIQUE VIEW TRIGGER PROCEDURE FUNCTION IF ELSE WHILE
           RETURN DECLARE EXEC WITH RECURSIVE OVER PARTITION WINDOW FETCH NEXT ROWS
-        )
+        ]
 
-        types = %w(
+        types = %w[
           INT INTEGER SMALLINT BIGINT DECIMAL NUMERIC FLOAT REAL DOUBLE
           CHAR VARCHAR TEXT BLOB DATE TIME TIMESTAMP BOOLEAN SERIAL UUID
-        )
+        ]
 
         kw_pattern = keywords.join("|")
         type_pattern = types.join("|")

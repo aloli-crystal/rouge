@@ -26,8 +26,8 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(block endblock for endfor if elif else endif macro endmacro call endcall filter endfilter set extends include import from with without context raw endraw autoescape endautoescape trans endtrans pluralize do continue break as recursive scoped)
-        constants = %w(true false none True False None)
+        keywords = %w[block endblock for endfor if elif else endif macro endmacro call endcall filter endfilter set extends include import from with without context raw endraw autoescape endautoescape trans endtrans pluralize do continue break as recursive scoped]
+        constants = %w[true false none True False None]
 
         expr = State.new(:expr)
         expr.add_rule Rule.new(/\s+/, Tokens::TextWhitespace)

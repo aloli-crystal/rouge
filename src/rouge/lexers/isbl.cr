@@ -26,7 +26,7 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(if then else endif for next while wend select case end sub function dim set let call exit do loop with class property get public private)
+        keywords = %w[if then else endif for next while wend select case end sub function dim set let call exit do loop with class property get public private]
 
         string_double = State.new(:string_double)
         string_double.add_rule Rule.new(/\\./, Tokens::StrEscape)

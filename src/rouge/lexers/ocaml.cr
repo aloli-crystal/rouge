@@ -26,9 +26,9 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(and as assert asr begin class constraint do done downto else end exception external for fun function functor if in include inherit initializer land lazy let lor lsl lsr lxor match method mod module mutable new nonrec object of open or private rec sig struct then to try type val virtual when while with)
-        types = %w(int float char string bool unit list array option ref exn)
-        constants = %w(true false)
+        keywords = %w[and as assert asr begin class constraint do done downto else end exception external for fun function functor if in include inherit initializer land lazy let lor lsl lsr lxor match method mod module mutable new nonrec object of open or private rec sig struct then to try type val virtual when while with]
+        types = %w[int float char string bool unit list array option ref exn]
+        constants = %w[true false]
 
         comment_multi = State.new(:comment_multi)
         comment_multi.add_rule Rule.new(/\(\*/, Tokens::CommentMultiline, next_state: :comment_multi)

@@ -71,14 +71,14 @@ describe Rouge::Lexers::GraphQL do
 
   it "tokenizes a complete GraphQL snippet" do
     gql_code = <<-GQL
-    query GetUser($id: ID!) {
-      user(id: $id) @deprecated {
-        name
-        email
-        age
+      query GetUser($id: ID!) {
+        user(id: $id) @deprecated {
+          name
+          email
+          age
+        }
       }
-    }
-    GQL
+      GQL
 
     lexer = Rouge::Lexers::GraphQL.new
     tokens = lexer.lex(gql_code)
@@ -155,20 +155,20 @@ describe Rouge::Lexers::Protobuf do
 
   it "tokenizes a complete protobuf snippet" do
     proto_code = <<-PROTO
-    syntax = "proto3";
+      syntax = "proto3";
 
-    package example;
+      package example;
 
-    message Person {
-      string name = 1;
-      int32 age = 2;
-      bool active = true;
-    }
+      message Person {
+        string name = 1;
+        int32 age = 2;
+        bool active = true;
+      }
 
-    service Greeter {
-      rpc SayHello (HelloRequest) returns (HelloReply);
-    }
-    PROTO
+      service Greeter {
+        rpc SayHello (HelloRequest) returns (HelloReply);
+      }
+      PROTO
 
     lexer = Rouge::Lexers::Protobuf.new
     tokens = lexer.lex(proto_code)
@@ -242,24 +242,24 @@ describe Rouge::Lexers::SCSS do
 
   it "tokenizes a complete SCSS snippet" do
     scss_code = <<-SCSS
-    $primary: #333;
-    $font-size: 16px;
+      $primary: #333;
+      $font-size: 16px;
 
-    @mixin flex-center {
-      display: flex;
-      align-items: center;
-    }
-
-    .container {
-      @include flex-center;
-      color: $primary;
-      font-size: $font-size;
-
-      &:hover {
-        color: #fff;
+      @mixin flex-center {
+        display: flex;
+        align-items: center;
       }
-    }
-    SCSS
+
+      .container {
+        @include flex-center;
+        color: $primary;
+        font-size: $font-size;
+
+        &:hover {
+          color: #fff;
+        }
+      }
+      SCSS
 
     lexer = Rouge::Lexers::SCSS.new
     tokens = lexer.lex(scss_code)
@@ -351,16 +351,16 @@ describe Rouge::Lexers::Zig do
 
   it "tokenizes a complete Zig snippet" do
     zig_code = <<-ZIG
-    const std = @import("std");
+      const std = @import("std");
 
-    pub fn main() !void {
-        const x: u32 = 42;
-        const y: f64 = 3.14;
-        if (x > 0) {
-            std.debug.print("hello\\n", .{});
-        }
-    }
-    ZIG
+      pub fn main() !void {
+          const x: u32 = 42;
+          const y: f64 = 3.14;
+          if (x > 0) {
+              std.debug.print("hello\\n", .{});
+          }
+      }
+      ZIG
 
     lexer = Rouge::Lexers::Zig.new
     tokens = lexer.lex(zig_code)
@@ -442,29 +442,29 @@ describe Rouge::Lexers::Terraform do
 
   it "tokenizes a complete Terraform snippet" do
     tf_code = <<-TF
-    # Configure AWS provider
-    provider "aws" {
-      region = "us-east-1"
-    }
-
-    variable "name" {
-      default = "example"
-    }
-
-    resource "aws_instance" "web" {
-      ami           = "ami-12345"
-      instance_type = "t2.micro"
-      count         = 3
-
-      tags = {
-        Name = "web-${var.name}"
+      # Configure AWS provider
+      provider "aws" {
+        region = "us-east-1"
       }
-    }
 
-    output "public_ip" {
-      value = length(aws_instance.web)
-    }
-    TF
+      variable "name" {
+        default = "example"
+      }
+
+      resource "aws_instance" "web" {
+        ami           = "ami-12345"
+        instance_type = "t2.micro"
+        count         = 3
+
+        tags = {
+          Name = "web-${var.name}"
+        }
+      }
+
+      output "public_ip" {
+        value = length(aws_instance.web)
+      }
+      TF
 
     lexer = Rouge::Lexers::Terraform.new
     tokens = lexer.lex(tf_code)

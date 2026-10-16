@@ -26,8 +26,8 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(after begin case catch cond end fun if let of query receive try when)
-        constants = %w(true false undefined)
+        keywords = %w[after begin case catch cond end fun if let of query receive try when]
+        constants = %w[true false undefined]
 
         comment = State.new(:comment)
         comment.add_rule Rule.new(/[^\n]*/, Tokens::CommentSingle, pop: true)

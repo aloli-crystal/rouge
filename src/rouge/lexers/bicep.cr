@@ -26,8 +26,8 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(resource module param var output type targetScope existing if for in import using metadata func)
-        types = %w(string int bool object array)
+        keywords = %w[resource module param var output type targetScope existing if for in import using metadata func]
+        types = %w[string int bool object array]
 
         string_single = State.new(:string_single)
         string_single.add_rule Rule.new(/\\./, Tokens::StrEscape)

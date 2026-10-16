@@ -26,8 +26,8 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(abstract break case catch class continue default do else enum extends final finally for global if implements import instanceof interface new null override private protected public return static super switch this throw transient trigger try virtual void webservice while with sharing without)
-        soql_kw = %w(SELECT FROM WHERE AND OR NOT IN LIKE ORDER BY GROUP HAVING LIMIT OFFSET UPDATE TRACKING VIEWSTAT FOR REFERENCE VIEW ALL ROWS NULLS FIRST LAST ASC DESC)
+        keywords = %w[abstract break case catch class continue default do else enum extends final finally for global if implements import instanceof interface new null override private protected public return static super switch this throw transient trigger try virtual void webservice while with sharing without]
+        soql_kw = %w[SELECT FROM WHERE AND OR NOT IN LIKE ORDER BY GROUP HAVING LIMIT OFFSET UPDATE TRACKING VIEWSTAT FOR REFERENCE VIEW ALL ROWS NULLS FIRST LAST ASC DESC]
 
         comment_block = State.new(:comment_block)
         comment_block.add_rule Rule.new(/\*\//, Tokens::CommentMultiline, pop: true)

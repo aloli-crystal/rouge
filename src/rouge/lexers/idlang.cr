@@ -26,7 +26,7 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        keywords = %w(PRO FUNCTION END BEGIN RETURN IF THEN ELSE FOR DO WHILE REPEAT UNTIL CASE OF SWITCH BREAK CONTINUE GOTO COMMON COMPILE_OPT ENDFOR ENDIF ENDWHILE ENDCASE ENDSWITCH ENDREP)
+        keywords = %w[PRO FUNCTION END BEGIN RETURN IF THEN ELSE FOR DO WHILE REPEAT UNTIL CASE OF SWITCH BREAK CONTINUE GOTO COMMON COMPILE_OPT ENDFOR ENDIF ENDWHILE ENDCASE ENDSWITCH ENDREP]
 
         string_double = State.new(:string_double)
         string_double.add_rule Rule.new(/\\./, Tokens::StrEscape)

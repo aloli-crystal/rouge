@@ -26,7 +26,7 @@ module Rouge
       private def self.build_states : Hash(Symbol, State)
         states = {} of Symbol => State
 
-        coffee_keywords = %w(if else unless switch when then for while until loop in of by to til do return break continue throw try catch finally class extends new delete typeof instanceof not and or is isnt true false null undefined void this super)
+        coffee_keywords = %w[if else unless switch when then for while until loop in of by to til do return break continue throw try catch finally class extends new delete typeof instanceof not and or is isnt true false null undefined void this super]
 
         # Code line state: entered after seeing indentation
         code_line = State.new(:code_line)

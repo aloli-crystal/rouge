@@ -66,17 +66,17 @@ describe Rouge::Lexers::Markdown do
 
   it "tokenizes a complete Markdown snippet" do
     md_code = <<-MD
-    # Title
+      # Title
 
-    Some **bold** and *italic* text.
+      Some **bold** and *italic* text.
 
-    - list item
-    - another item
+      - list item
+      - another item
 
-    [link](http://example.com)
+      [link](http://example.com)
 
-    `inline code`
-    MD
+      `inline code`
+      MD
 
     lexer = Rouge::Lexers::Markdown.new
     tokens = lexer.lex(md_code)
@@ -148,12 +148,12 @@ describe Rouge::Lexers::XML do
 
   it "tokenizes a complete XML snippet" do
     xml_code = <<-XML
-    <?xml version="1.0"?>
-    <root xmlns:ns="http://example.com">
-      <!-- comment -->
-      <item id="1">&amp;</item>
-    </root>
-    XML
+      <?xml version="1.0"?>
+      <root xmlns:ns="http://example.com">
+        <!-- comment -->
+        <item id="1">&amp;</item>
+      </root>
+      XML
 
     lexer = Rouge::Lexers::XML.new
     tokens = lexer.lex(xml_code)
@@ -252,18 +252,18 @@ describe Rouge::Lexers::TOML do
 
   it "tokenizes a complete TOML snippet" do
     toml_code = <<-TOML
-    [package]
-    name = "my-app"
-    version = "0.1.0"
-    enabled = true
+      [package]
+      name = "my-app"
+      version = "0.1.0"
+      enabled = true
 
-    [dependencies]
-    crystal = ">=1.0"
+      [dependencies]
+      crystal = ">=1.0"
 
-    [[items]]
-    id = 42
-    weight = 3.14
-    TOML
+      [[items]]
+      id = 42
+      weight = 3.14
+      TOML
 
     lexer = Rouge::Lexers::TOML.new
     tokens = lexer.lex(toml_code)
@@ -353,17 +353,17 @@ describe Rouge::Lexers::Kotlin do
 
   it "tokenizes a complete Kotlin snippet" do
     kt_code = <<-KT
-    package com.example
+      package com.example
 
-    import kotlin.collections.List
+      import kotlin.collections.List
 
-    @JvmStatic
-    fun main(args: Array<String>) {
-        val x: Int = 42
-        val msg = "Hello, ${args[0]}!"
-        println(msg)
-    }
-    KT
+      @JvmStatic
+      fun main(args: Array<String>) {
+          val x: Int = 42
+          val msg = "Hello, ${args[0]}!"
+          println(msg)
+      }
+      KT
 
     lexer = Rouge::Lexers::Kotlin.new
     tokens = lexer.lex(kt_code)
@@ -459,16 +459,16 @@ describe Rouge::Lexers::Lua do
 
   it "tokenizes a complete Lua snippet" do
     lua_code = <<-LUA
-    -- Factorial function
-    local function factorial(n)
-        if n <= 1 then
-            return 1
-        end
-        return n * factorial(n - 1)
-    end
+      -- Factorial function
+      local function factorial(n)
+          if n <= 1 then
+              return 1
+          end
+          return n * factorial(n - 1)
+      end
 
-    print(factorial(10))
-    LUA
+      print(factorial(10))
+      LUA
 
     lexer = Rouge::Lexers::Lua.new
     tokens = lexer.lex(lua_code)
